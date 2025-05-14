@@ -1,14 +1,14 @@
 <!-- Imports -->
 <script>
-    import Header from '../components/Header.svelte';
-    import Footer from '../components/Footer.svelte';
+    import Header from '$lib/components/+Header.svelte';
+    import Footer from '$lib/components/+Footer.svelte';
  
     import sdcLogo from '$lib/assets/sdc-club-logo.png'
     import jaarsHealthcare from '$lib/assets/jaars-healthcare.png'
     import twr360 from '$lib/assets/twr360.png'
 
     // Typing Animation
-    let phrases = [" Software Engineer.", " Web Developer.", " Musician.", " UI/UX Designer."];
+    let phrases = [" Software Engineer.", " Data Engineer.", " Web Developer.", " Musician.", " Sax Player.", " UI/UX Designer."];
     let phraseIndex = 0;
     let currentPhrase = phrases[phraseIndex]; // text to be typed
     let typedChar = ""; // SECTION displaying typed text
@@ -82,7 +82,7 @@
     // Experience List
     let experience = [
       {
-        title: "IT Development Intern",
+        title: "Data Engineer Intern",
         company: "Genworth Financial",
         location: "Richmond, VA",
         date: "May 2025 - Aug 2025",
@@ -149,6 +149,13 @@
             skills: ["Java", "Maven", "Spring", "Kafka", "SQL", "REST API"],
             description: "Over the period of August 2023, completed this virtual experience program. The application interfaced with a stock price data feed, utilizing JPMorgan Chase & Co's frameworks and tools.  Presented the data visually for traders.",
             link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_sZPzENtiAe9DFXqeJ_1692719265228_completion_certificate.pdf"
+        },
+        {
+            title: "This website!",
+            image: "",
+            skills: ["Svelte", "Tailwind CSS", "Vite.js"],
+            description: "Developed this portfolio website to showcase my skills and projects. The website was developed using Svelte, Tailwind CSS, and Vite.js.",
+            link: "https://www.jeffreyv101.dev"
         }
     ];
 
@@ -166,7 +173,6 @@
         }
     ];
 </script>
-
 <div class="bg-gradient-to-b from-blue-900 to-green-900">
   <Header />
 
@@ -191,27 +197,26 @@
   </div>
 </div>
 
-<div id="skills" class="relative isolate px-6 pt-14 bg-gradient-to-b from-green-800 to-green-700 lg:px-8">
-  <h1 class="text-center text-4xl font-semibold tracking-tight text-gray-100">Technical Skills at a Glance</h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-10">
-    {#each skills as skill}
-      <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-gray-800 dark:text-gray-200">
-        <h2 class="text-xl font-semibold text-blue-900 dark:text-green-200">{skill.title}</h2>
-        <ul class="list-disc pl-5">
-          {#each skill.items as item}
-            <li class="text-gray-700 dark:text-gray-300">{item}</li>
-          {/each}
-        </ul>
-      </div>
-    {/each}
+<div id="about-me" class="relative isolate px-6 pt-14 bg-gradient-to-b from-green-800 to-green-700 lg:px-8">
+  <h1 class="text-center text-4xl font-extrabold tracking-tight text-gray-100">About Me</h1>
+  <div class="bg-gradient-to-r from-green-100 to-blue-100 p-8 mt-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 dark:from-green-900 dark:to-blue-950 dark:text-gray-50">
+    <p class="text-lg text-gray-700 leading-relaxed dark:text-gray-300">
+      I am a <span class="font-bold text-green-700 dark:text-green-300">passionate software engineer</span> with a strong foundation in computer science and a keen interest in web development. I have experience in various programming languages, frameworks, and tools, and I am always eager to learn new technologies and improve my skills. I enjoy working on challenging projects that require <span class="italic text-blue-800 dark:text-blue-300">creative problem-solving</span> and collaboration with others.
+    </p>
+    <p class="mt-6 text-lg text-gray-700 leading-relaxed dark:text-gray-300">
+      Outside of software engineering, I am involved with <span class="font-semibold text-green-700 dark:text-green-300">Liberty's Basketball Spirit Band</span> and <span class="font-semibold text-green-700 dark:text-green-300">Liberty's Marching Band</span> on Alto Sax! My participation in these ensembles has allowed me to travel to various locations and perform during <span class="italic text-blue-800 dark:text-blue-300">college football bowl games</span> as well as <span class="italic text-blue-800 dark:text-blue-300">national basketball championships</span>.
+    </p>
+    <p class="mt-6 text-lg text-gray-700 leading-relaxed dark:text-gray-300">
+      This summer, I am thrilled to be interning at <span class="font-bold text-green-700 dark:text-green-300">Genworth</span> for their IT Development Internship! I am looking forward to learning more about the IT and software development industry and gaining valuable experience in the field.
+    </p>
   </div>
 </div>
 
 <div id="experience" class="relative isolate px-6 pt-14 bg-gradient-to-b from-green-700 to-gray-700 lg:px-8">
   <h1 class="text-center text-4xl font-semibold tracking-tight text-gray-100">Experience</h1>
-  <ul class="lg:grid lg:grid-cols-2">
+  <ul class="grid grid-cols-1 xl:grid-cols-2 gap-3">
     {#each experience as job}
-      <li class="lg:px-5 py-5">
+      <li class="py-5 xl:px-5">
         <div class="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300 dark:bg-blue-950 dark:text-gray-50">
           <div class="md:flex md:justify-between">
             <div>
@@ -233,6 +238,17 @@
     {/each}
   </ul>
 </div>
+
+<!-- <style>
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+</style> -->
 
 <div id="projects" class="relative isolate px-6 pt-14 lg:px-8 bg-gradient-to-b from-gray-700 to-gray-800">
   <h1 class="text-center text-4xl font-semibold tracking-tight pb-5 text-gray-100">Projects</h1>
@@ -288,6 +304,22 @@
   <br>
 </div>
 
+<!-- <div id="skills" class="relative isolate px-6 pt-14 bg-gradient-to-b from-gray-900 to-gray-800 lg:px-8">
+  <h1 class="text-center text-4xl font-semibold tracking-tight pb-5 text-gray-100">Technical Skills at a glance</h1>
+  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {#each skills as skill}
+      <li class="group p-6 rounded-xl bg-gradient-to-r from-green-100 to-blue-100 hover:shadow-lg transition-shadow duration-300 dark:from-green-800 dark:to-blue-950">
+        <h2 class="text-xl font-semibold mb-4 text-blue-900 dark:text-green-200">{skill.title}</h2>
+        <ul>
+          {#each skill.items as item}
+            <li class="text-gray-600 mb-4 dark:text-gray-300">{item}</li>
+          {/each}
+        </ul>
+      </li>
+    {/each}
+  </ul>
+</div> -->
+
 <div id="contact" class="relative isolate px-6 pt-14 lg:px-8 bg-gradient-to-b bg-gray-900">
   <h1 class="text-center text-4xl font-semibold tracking-tight text-gray-100">Get in Touch</h1>
   <div class="max-w-2xl mx-auto py-16 sm:py-24 lg:py-32">
@@ -301,7 +333,7 @@
           id="email" 
           placeholder="Your email" 
           required 
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300"
+          class="mt-1 block w-full rounded-md p-2 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300"
         />
       </div>
       <div>
@@ -312,7 +344,7 @@
           placeholder="Your message" 
           required 
           rows="5" 
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300"
+          class="mt-1 block w-full rounded-md p-2 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300"
         ></textarea>
       </div>
       <div class="text-center">

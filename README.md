@@ -1,38 +1,48 @@
-# sv
+# Jeffrey Vandever Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## About the Portfolio
 
-## Creating a project
+This is the repository for my personal portfolio website, showcasing my projects, skills, and experience as a developer. The portfolio is designed to provide an overview of my work and serve as a platform for potential collaborators, employers, and clients to learn more about me.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Tech Stack
 
-```bash
-# create a new project in the current directory
-npx sv create
+The portfolio is built using the following technologies:
 
-# create a new project in my-app
-npx sv create my-app
-```
+- **Frontend**: SvelteKit, Tailwind CSS
+- **Hosting**: Vercel, Cloudflare
+- **Version Control**: Git and GitHub
 
-## Developing
+## Features
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Project Showcase**: Displays a collection of my projects with descriptions, technologies used, and links to live demos or repositories.
+- **Contact Form**: Allows visitors to get in touch with me directly.
 
-```bash
-npm run dev
+## Getting Started
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+To run this project locally:
 
-## Building
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/jeffreyv-portfolio.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd jeffreyv-portfolio
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
 
-To create a production version of your app:
+## License
 
-```bash
-npm run build
-```
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-You can preview the production build with `npm run preview`.
+## Contact
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Feel free to reach out to me via [jeffrey.vandever101@gmail.com](mailto:jeffrey.vandever101@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/jeffrey-vandever/).
