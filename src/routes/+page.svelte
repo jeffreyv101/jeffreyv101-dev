@@ -173,6 +173,12 @@
         }
     ];
 </script>
+
+<head>
+  <title>Jeffrey Vandever - Portfolio</title>
+</head>
+
+<main>
 <div class="bg-gradient-to-b from-blue-900 to-green-900">
   <Header />
 
@@ -368,3 +374,4 @@
 </style>
 
 <Footer />
+</main>
