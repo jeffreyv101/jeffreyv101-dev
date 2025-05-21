@@ -59,26 +59,6 @@
     }
     typing();
 
-    // Skills List
-    let skills = [
-      {
-        title: "Languages",
-        items: ["Python", "C++", "C", "Java", "JavaScript", "PHP", "HTML", "CSS"]
-      },
-      {
-        title: "Libraries/Frameworks",
-        items: ["React.js", "Node.js", "Express.js", "Flask", "Spring Boot", "Bootstrap", "Tailwind CSS"]
-      },
-      {
-        title: "Databases",
-        items: ["SQL", "MySQL", "NoSQL", "MongoDB"]
-      },
-      {
-        title: "Tools",
-        items: ["AWS", "Google Cloud Platform", "Salesforce", "Docker", "Git", "GitHub", "Figma"]
-      }
-    ];
-
     // Experience List
     let experience = [
       {
@@ -205,7 +185,7 @@
 
 <div id="about-me" class="relative isolate px-6 pt-14 bg-gradient-to-b from-green-800 to-green-700 lg:px-8">
   <h1 class="text-center text-4xl font-extrabold tracking-tight text-gray-100">About Me</h1>
-  <div class="bg-gradient-to-r from-green-100 to-blue-100 p-8 mt-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 dark:from-green-900 dark:to-blue-950 dark:text-gray-50">
+  <div class="bg-gradient-to-r from-white to-green-100 p-8 mt-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 dark:from-green-900 dark:to-blue-950 dark:text-gray-50">
     <p class="text-lg text-gray-700 leading-relaxed dark:text-gray-300">
       I am a <span class="font-bold text-green-700 dark:text-green-300">passionate software engineer</span> with a strong foundation in computer science and a keen interest in web development. I have experience in various programming languages, frameworks, and tools, and I am always eager to learn new technologies and improve my skills. I enjoy working on challenging projects that require <span class="italic text-blue-800 dark:text-blue-300">creative problem-solving</span> and collaboration with others.
     </p>
@@ -260,7 +240,7 @@
   <h1 class="text-center text-4xl font-semibold tracking-tight pb-5 text-gray-100">Projects</h1>
   <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {#each projects as project}
-      <li class="group p-6 rounded-xl bg-gradient-to-r from-green-100 to-blue-100 hover:shadow-lg transition-shadow duration-300 dark:from-green-800 dark:to-blue-950">
+      <li class="group p-6 rounded-xl bg-gradient-to-r from-white to-blue-100 hover:shadow-lg transition-shadow duration-300 dark:from-green-800 dark:to-blue-950">
         {#if project.image != ''}
           <img src="{project.image}" alt="{project.title}" class="w-full h-80 lg:h-48 object-cover rounded-t-xl mb-4">
         {/if}
