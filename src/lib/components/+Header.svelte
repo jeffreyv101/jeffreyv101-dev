@@ -1,5 +1,5 @@
 <header class="fixed inset-x-0 top-0 z-50 bg-gray-800 shadow">
-  <nav class="flex items-center justify-between p-3 lg:px-8" aria-label="Global">
+  <nav class="flex items-center justify-between p-3 max-w-[154rem] mx-auto lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
       <a href="/" class="-m-1.5 p-1.5">
         <h2 class="text-xl font-semibold text-blue-400">Jeffrey Vandever</h2>

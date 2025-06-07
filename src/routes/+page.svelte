@@ -3,6 +3,7 @@
     import Header from '$lib/components/+Header.svelte';
     import Footer from '$lib/components/+Footer.svelte';
  
+    import repoReels from '$lib/assets/repo-reels.png'
     import sdcLogo from '$lib/assets/sdc-club-logo.png'
     import jaarsHealthcare from '$lib/assets/jaars-healthcare.png'
     import twr360 from '$lib/assets/twr360.png'
@@ -72,8 +73,8 @@
         title: "Web Design Assistant",
         company: "Liberty University - Facilities Planning and Construction",
         location: "Lynchburg, VA",
-        date: "Apr 2025 - Present",
-        description: ["Led the development of a new website for the department, taking elements from the 5+ different departments under it's umbrella.", "Collaborated with the department to gather requirements and ensure the website met their needs and expectations.", "Implemented responsive design principles to ensure the website was accessible on various devices.", "More information coming soon!"]
+        date: "Apr 2025 - May 2025",
+        description: ["Led the development of a redesigned website for the department, collaborating with the department to gather requirements and ensure the website met their needs and expectations.", "Created and implemented an all-new design to unite the 5+ departments that fall under the FPM umbrella, keeping in line with the existing format specifications of the overall Liberty.edu domain."]
       },
       {
         title: "Full Stack Developer Intern",
@@ -96,11 +97,18 @@
     // Project List
     let projects = [
         {
+          title: "Repo Reels",
+          image: repoReels,
+          skills: ["TBD"],
+          description: "Inspired by the quick, dynamic nature of Instagram Reels, with the collaborative spirit of Git, Repo Reels will be a go-to hub for sharing and discovering bite-sized, visual content that revolves around programming.",
+          link: "WIP"
+        },
+        {
           title: "Software Development Club Website",
           image: sdcLogo,
           skills: ["React.js", "React Router", "Vite.js", "Tailwind CSS"],
-          description: "Developed a website for the Liberty University Software Development Club to help students find resources and information about the club. The website was developed using React.js, React Router, Vite.js, and Tailwind CSS.",
-          link: ""
+          description: "Developing a website for the Liberty University Software Development Club to help students find resources and information about the club. The website was developed using React.js, React Router, Vite.js, and Tailwind CSS.",
+          link: "WIP"
         },
         {
           title: "JAARS Healthcare Portal",
@@ -118,9 +126,9 @@
         },
         {
             title: "TWR360 Generative AI Chatbot",
-            skills: ["Google Generative AI", "Google Cloud Platform", "AWS EC2"],
+            skills: ["Google Generative AI", "Google Cloud Platform", "AWS EC2", "S3"],
             image: twr360,
-            description: "Built a generative AI chatbot for the TWR360 platform to help users find relevant content. The chatbot was built using: Google Generative AI, Google Cloud Platform, and an AWS EC2 Server. Click the follow link to go to the TWR360 homepage where the chatbot widget will be located on the lower right corner:",
+            description: "Built a generative AI chatbot for the TWR360 platform to help users find relevant content. Click the follow link to go to the TWR360 homepage where the chatbot widget will be located on the lower right corner:",
             link: "https://twr360.org"
         },
         {
@@ -129,13 +137,6 @@
             skills: ["Java", "Maven", "Spring", "Kafka", "SQL", "REST API"],
             description: "Over the period of August 2023, completed this virtual experience program. The application interfaced with a stock price data feed, utilizing JPMorgan Chase & Co's frameworks and tools.  Presented the data visually for traders.",
             link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_sZPzENtiAe9DFXqeJ_1692719265228_completion_certificate.pdf"
-        },
-        {
-            title: "This website!",
-            image: "",
-            skills: ["Svelte", "Tailwind CSS", "Vite.js"],
-            description: "Developed this portfolio website to showcase my skills and projects. The website was developed using Svelte, Tailwind CSS, and Vite.js.",
-            link: "https://www.jeffreyv101.dev"
         }
     ];
 
@@ -170,7 +171,7 @@
       <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
         I'm Jeffrey Vandever,
       </h1>
-      <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+      <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-5xl sm:pt-3 lg:text-6xl">
         I am a<span class="text-green-400">{typedChar}</span>
       </h1>
       <p class="mt-6 text-lg text-blue-100 dark:text-green-200">
@@ -185,7 +186,7 @@
 
 <div id="about-me" class="relative isolate px-6 pt-14 bg-gradient-to-b from-green-800 to-green-700 lg:px-8">
   <h1 class="text-center text-4xl font-extrabold tracking-tight text-gray-100">About Me</h1>
-  <div class="bg-gradient-to-r from-white to-green-100 p-8 mt-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 dark:from-green-900 dark:to-blue-950 dark:text-gray-50">
+  <div class="max-w-[150rem] mx-auto bg-gradient-to-r from-white to-green-100 p-8 mt-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 dark:from-green-900 dark:to-blue-950 dark:text-gray-50">
     <p class="text-lg text-gray-700 leading-relaxed dark:text-gray-300">
       I am a <span class="font-bold text-green-700 dark:text-green-300">passionate software engineer</span> with a strong foundation in computer science and a keen interest in web development. I have experience in various programming languages, frameworks, and tools, and I am always eager to learn new technologies and improve my skills. I enjoy working on challenging projects that require <span class="italic text-blue-800 dark:text-blue-300">creative problem-solving</span> and collaboration with others.
     </p>
@@ -200,10 +201,13 @@
 
 <div id="experience" class="relative isolate px-6 pt-14 bg-gradient-to-b from-green-700 to-gray-700 lg:px-8">
   <h1 class="text-center text-4xl font-semibold tracking-tight text-gray-100">Experience</h1>
-  <ul class="grid grid-cols-1 xl:grid-cols-2 gap-3">
+  <ul class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-8 max-w-[150rem] mx-auto">
+    {#if experience.length === 0}
+      <li class="text-center text-gray-500 dark:text-gray-400">No experience listed yet.</li>
+    {/if}
     {#each experience as job}
-      <li class="py-5 xl:px-5">
-        <div class="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300 dark:bg-blue-950 dark:text-gray-50">
+      <li class="flex">
+        <div class="flex flex-col flex-1 bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300 dark:bg-blue-950 dark:text-gray-50 h-full">
           <div class="md:flex md:justify-between">
             <div>
               <h2 class="text-2xl font-semibold text-blue-900 dark:text-green-200">{job.title}</h2>
@@ -214,7 +218,7 @@
               <h3 class="italic text-gray-600 dark:text-gray-400">{job.date}</h3>
             </div>
           </div>
-          <ul>
+          <ul class="flex-1">
             {#each job.description as descriptionItem}
               <li class="m-2 text-gray-700 dark:text-gray-300">{descriptionItem}</li>
             {/each}
@@ -225,22 +229,11 @@
   </ul>
 </div>
 
-<!-- <style>
-    ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-    li {
-      display: flex;
-      flex-direction: column;
-    }
-</style> -->
-
 <div id="projects" class="relative isolate px-6 pt-14 lg:px-8 bg-gradient-to-b from-gray-700 to-gray-800">
   <h1 class="text-center text-4xl font-semibold tracking-tight pb-5 text-gray-100">Projects</h1>
-  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[150rem] mx-auto">
     {#each projects as project}
-      <li class="group p-6 rounded-xl bg-gradient-to-r from-white to-blue-100 hover:shadow-lg transition-shadow duration-300 dark:from-green-800 dark:to-blue-950">
+      <li class="group p-6 rounded-xl bg-gradient-to-r from-white to-blue-100 hover:shadow-lg transition-shadow duration-300  dark:from-green-800 dark:to-blue-950">
         {#if project.image != ''}
           <img src="{project.image}" alt="{project.title}" class="w-full h-80 lg:h-48 object-cover rounded-t-xl mb-4">
         {/if}
@@ -252,6 +245,8 @@
         <div class="flex justify-between items-center">
           {#if project.link == 'NA'}
             <span class="text-gray-500 dark:text-gray-400">Proprietary Project, please contact for more information...</span>
+          {:else if project.link == 'WIP'}
+            <span class="text-gray-500 dark:text-gray-400">Project in progress...</span>
           {:else if project.link == ''}
             <span class="text-gray-500 dark:text-gray-400">No link available</span>
           {:else if project.link == 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_sZPzENtiAe9DFXqeJ_1692719265228_completion_certificate.pdf'}
@@ -277,7 +272,7 @@
 
 <div id="education" class="relative isolate px-6 pt-14 bg-gradient-to-b from-gray-800 to-gray-900">
   <h1 class="text-center text-4xl font-semibold tracking-tight py-5 text-gray-100">Education</h1>
-  <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+  <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-[150rem] mx-auto">
     {#each education as school}
       <li class="group p-6 rounded-xl bg-gradient-to-r bg-white hover:shadow-lg transition-shadow duration-300 dark:from-blue-800 dark:to-gray-900">
         <h2 class="text-xl font-semibold mb-4 text-blue-900 dark:text-green-200">{school.title}</h2>
