@@ -3,7 +3,8 @@
     import Header from '$lib/components/+Header.svelte';
     import Footer from '$lib/components/+Footer.svelte';
  
-    import repoReels from '$lib/assets/repo-reels.png'
+    import repoReelsLight from '$lib/assets/repo-reels-light.png'
+    import repoReelsDark from '$lib/assets/repo-reels-dark.png'
     import sdcLogo from '$lib/assets/sdc-club-logo.png'
     import jaarsHealthcare from '$lib/assets/jaars-healthcare.png'
     import twr360 from '$lib/assets/twr360.png'
@@ -98,7 +99,7 @@
     let projects = [
         {
           title: "Repo Reels",
-          image: repoReels,
+          image: repoReelsLight,
           skills: ["TBD"],
           description: "Inspired by the quick, dynamic nature of Instagram Reels, with the collaborative spirit of Git, Repo Reels will be a go-to hub for sharing and discovering bite-sized, visual content that revolves around programming.",
           link: "WIP"
@@ -139,6 +140,30 @@
             link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_sZPzENtiAe9DFXqeJ_1692719265228_completion_certificate.pdf"
         }
     ];
+    
+    // Dark Mode Image Handling for Repo Reels
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+      const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const updateRepoReelsImage = (event) => {
+        if (event.matches) {
+          // Dark mode is enabled
+          projects[0].image = repoReelsDark; // Update image for Repo Reels in dark mode
+        } else {
+          // Light mode is enabled
+          projects[0].image = repoReelsLight; // Update image for Repo Reels in light mode
+        }
+      };
+      // Set initial image based on current mode
+      updateRepoReelsImage(darkModeMediaQuery);
+      darkModeMediaQuery.addEventListener('change', updateRepoReelsImage);
+
+      // Cleanup listener on unmount
+      return () => {
+        darkModeMediaQuery.removeEventListener('change', updateRepoReelsImage);
+      };
+    });
 
     // Education List
     let education = [
