@@ -1,0 +1,15 @@
+// Education List
+const education = [
+    {
+        title: "Liberty University",
+        degree: "Bachelor of Science in Computer Science: Software Engineering; Minor in Business",
+        date: "Expected Graduation: May 2026"
+    },
+    {
+        title: "Liberty University",
+        degree: "Bachelor of Science in Computer Science: Web and Mobile Programming",
+        date: "Expected Graduation: May 2026"
+    }
+];
+
+export default education;

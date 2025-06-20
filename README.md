@@ -39,10 +39,6 @@ To run this project locally:
     npm run dev
     ```
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 Feel free to reach out to me via [jeffrey.vandever101@gmail.com](mailto:jeffrey.vandever101@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/jeffrey-vandever/).
