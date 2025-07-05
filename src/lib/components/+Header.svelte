@@ -18,14 +18,14 @@
 
       <!-- Header Link Styling for Desktop Screens -->
       <div class="hidden lg:flex lg:gap-x-12">
-        <a href="/" class="text-sm/6 font-semibold text-gray-400">Home</a>
-        <a href="#skills" class="text-sm/6 font-semibold text-gray-400">Skills</a>
-        <a href="#experience" class="text-sm/6 font-semibold text-gray-400">Experience</a>
-        <a href="#projects" class="text-sm/6 font-semibold text-gray-400">Projects</a>
-        <a href="#contact" class="text-sm/6 font-semibold text-gray-400">Contact Me</a>
+        <a href="/" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Home</a>
+        <a href="#skills" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Skills</a>
+        <a href="#experience" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Experience</a>
+        <a href="#projects" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Projects</a>
+        <a href="#contact" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Contact Me</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end dark:text-gray-100">
-        <a href="https://github.com/jeffreyv101" target="_blank" class="text-sm/6 font-semibold text-gray-300">View GitHub <span aria-hidden="true">&rarr;</span></a>
+        <a href="https://github.com/jeffreyv101" target="_blank" class="text-sm/6 font-semibold text-gray-300 hover:text-white">View GitHub <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
@@ -47,11 +47,11 @@
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-400/10 dark:divide-gray-400">
             <div class="space-y-2 py-6">
-              <a href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-50 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800">Home</a>
-              <a href="#skills" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-50 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800">Skills</a>
-              <a href="#experience" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-50 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800">Experience</a> 
-              <a href="#projects" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:text-black hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800">Projects</a>
-              <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:text-black hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800">Contact Me</a>
+              <a href="/" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-50 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800">Home</a>
+              <a href="#skills" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-50 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800">Skills</a>
+              <a href="#experience" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-50 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800">Experience</a> 
+              <a href="#projects" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:text-black hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800">Projects</a>
+              <a href="#contact" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:text-black hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800">Contact Me</a>
             </div>
 
             <div class="py-6  flex items-center justify-between">
@@ -88,6 +88,22 @@
 <script>
   import { onMount } from 'svelte';
 
+  function toggleMenu() {
+    const burgerIcon = document.getElementById('burger-icon');
+    const mobileMenu = document.querySelector('[role="dialog"]');
+    if (burgerIcon && mobileMenu) {
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        burgerIcon.classList.add('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        burgerIcon.classList.remove('hidden');
+      }
+    } else {
+      console.error('Mobile navigation elements not found.');
+    }
+  };
+
   onMount(() => {
     const burgerIcon = document.getElementById('burger-icon');
     const mobileMenu = document.querySelector('[role="dialog"]');
@@ -98,17 +114,15 @@
 
       if (closeMenu && backdrop) {
         burgerIcon.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-            burgerIcon.classList.add('hidden');
+            toggleMenu();
         });
 
         closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            burgerIcon.classList.remove('hidden');
+            toggleMenu();
         });
 
         backdrop.addEventListener('click', () => {
-            mobileMenu.classList.remove('visible');
+            toggleMenu();
         });
       }
       else

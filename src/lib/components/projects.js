@@ -10,8 +10,15 @@ const projects = [
     {
         title: "Repo Reels",
         image: repoReelsLight,
-        skills: ["React Native", "PostgreSQL", "Node.js", "Express.js", "GitHub API"],
+        skills: ["Flutter", "Node.js", "PostgreSQL", "Express.js", "GitHub API"],
         description: "Inspired by the quick, dynamic nature of Instagram Reels, with the collaborative spirit of Git, Repo Reels will be a go-to hub for sharing and discovering bite-sized, visual content that revolves around programming.",
+        link: "WIP"
+    },
+    {
+        title: "Discipler",
+        image: missionizeLogo,
+        skills: ["React Native", "fastAPI", "MongoDB", "GPT-4"],
+        description: "Leading the technical development of Discipler, an AI-driven personal development platform designed to deliver daily, customized growth plans for individuals, groups, and communities. Leveraging GPT-4 and modern web technologies, the platform generates dynamic content, tracks user habits, and fosters engagement through gamified features and group analytics.",
         link: "WIP"
     },
     {
@@ -20,13 +27,6 @@ const projects = [
         skills: ["React.js", "React Router", "Vite.js", "Tailwind CSS"],
         description: "Developing a website for the Liberty University Software Development Club to help students find resources and information about the club. The website will include a blog, a resources page, and a contact page.",
         link: "WIP"
-    },
-    {
-        title: "Missionize & Discipler",
-        image: missionizeLogo,
-        skills: ["React.js", "OpenAI GPT-4", "Node.js", "Supabase", "Twilio"],
-        description: "Played a crucial part in the development of Discipler, an AI-driven personal development platform designed to deliver daily, customized growth plans for individuals, groups, and communities. Leveraging GPT-4 and modern web technologies, the platform generates dynamic content, tracks user habits, and fosters engagement through gamified features and group analytics.",
-        link: "https://discipler.io"
     },
     {
         title: "JAARS Healthcare Portal",
@@ -44,7 +44,7 @@ const projects = [
     },
     {
         title: "TWR360 Generative AI Chatbot",
-        skills: ["Google Generative AI", "Google Cloud Platform", "AWS EC2", "S3"],
+        skills: ["Google Generative AI", "Google Cloud Platform", "Node.js", "AWS EC2", "S3"],
         image: twr360,
         description: "Built a generative AI chatbot for the TWR360 platform to help users find relevant content. Click the follow link to go to the TWR360 homepage where the chatbot widget will be located on the lower right corner:",
         link: "https://twr360.org"

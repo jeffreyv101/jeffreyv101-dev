@@ -4,13 +4,13 @@
     import Footer from '$lib/components/+Footer.svelte';
 
     // Import skills, experience, projects, and education data
-    import experienceData from '$lib/components/experience.js';
+    import experienceData from '$lib/components/experience.json';
     const experience = experienceData;
-    import skillsData from '$lib/components/skills.js';
-    const skills = skillsData;
+    import skillsData from '$lib/components/skills.json';
+    const skills = skillsData; // SVG Icons for Skills courtesy of Tabler Icons
     import projectsData from '$lib/components/projects.js';
     const projects = projectsData;
-    import educationData from '$lib/components/education.js';
+    import educationData from '$lib/components/education.json';
     const education = educationData;
  
     import repoReelsLight from '$lib/assets/repo-reels-light.png'
@@ -18,7 +18,7 @@
 
 
     // Typing Animation
-    let phrases = [" Software Engineer.", " Data Engineer.", " Web Developer.", " Musician.", " Sax Player.", " UI/UX Designer."];
+    let phrases = [" Software Engineer.", " Data Engineer.", " Web Developer.", " DevOps Engineer.", " Musician.", " Sax Player.", " UI/UX Designer."];
     let phraseIndex = 0;
     let currentPhrase = phrases[phraseIndex]; // text to be typed
     let typedChar = ""; // SECTION displaying typed text
@@ -113,9 +113,10 @@
       <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-5xl sm:pt-3 lg:text-6xl">
         I am a<span class="text-green-400">{typedChar}</span>
       </h1>
-      <p class="mt-6 text-lg text-blue-100 dark:text-green-200">
-        A passionate developer with expertise in software engineering, web development, and design.
+      <p class="mt-6 text-md text-blue-100 dark:text-green-200">
+        A passionate developer with expertise in software engineering,
       </p>
+      <p class="text-md text-blue-100 dark:text-green-200">web development, data engineering, and design.</p>
       <a href="#contact" class="mt-8 inline-block px-6 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 dark:bg-green-500 dark:hover:bg-green-600 transition duration-300">
         Get in Touch!
       </a>
