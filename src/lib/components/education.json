@@ -1,12 +1,11 @@
 [
     {
         "title": "Liberty University",
-        "degree": "Bachelor of Science in Computer Science: Software Engineering; Minor in Business",
-        "date": "Expected Graduation: May 2026"
-    },
-    {
-        "title": "Liberty University",
-        "degree": "Bachelor of Science in Computer Science: Web and Mobile Programming",
+        "degree": [
+            "Bachelor of Science in Computer Science: Software Engineering",
+            "Bachelor of Science in Computer Science: Web and Mobile Programming",
+            "Minor in Business"
+        ],
         "date": "Expected Graduation: May 2026"
     }
 ]

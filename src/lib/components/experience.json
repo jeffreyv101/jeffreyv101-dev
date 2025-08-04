@@ -4,7 +4,11 @@
         "company": "Genworth Financial",
         "location": "Richmond, VA",
         "date": "May 2025 - Aug 2025",
-        "description": ["More information coming soon!"]
+        "description": [
+            "Spearheaded the development and deployment of a full CI/CD pipeline for a full-stack Next.js/fastAPI/GraphQL application, leveraging Docker and Kubernetes to prioritize consistent performance and uptime.",
+            "Developed Databricks-based FinOps dashboards to visualize cost trends and anomalies, integrating automated reporting for abnormal or inefficient cluster usage to drive cost optimization and accountability across teams.",
+            "Led research into Databricks Unity Catalog and DataHub integrations as part of a migration to the Databricks platform."
+        ]
     },
     {
         "title": "Web Design Assistant",

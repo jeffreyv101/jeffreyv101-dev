@@ -133,9 +133,6 @@
     <p class="mt-6 text-lg text-gray-700 leading-relaxed dark:text-gray-300">
       Outside of software engineering, I am involved with <span class="font-semibold text-green-700 dark:text-green-300">Liberty's Basketball Spirit Band</span> and <span class="font-semibold text-green-700 dark:text-green-300">Liberty's Marching Band</span> on Alto Sax! My participation in these ensembles has allowed me to travel to various locations and perform during <span class="italic text-blue-800 dark:text-blue-300">college football bowl games</span> as well as <span class="italic text-blue-800 dark:text-blue-300">national basketball championships</span>.
     </p>
-    <p class="mt-6 text-lg text-gray-700 leading-relaxed dark:text-gray-300">
-      This summer, I am thrilled to be interning at <span class="font-bold text-green-700 dark:text-green-300">Genworth</span> for their IT Development Internship! I am looking forward to learning more about how software and engineering is used in insurance and gaining valuable experience in the field.
-    </p>
   </div>
 </div>
 
@@ -235,16 +232,26 @@
 </div>
 
 <div id="education" class="relative isolate px-6 pt-14 bg-gradient-to-b from-gray-800 to-gray-900">
-  <h2 class="text-center text-4xl font-semibold tracking-tight py-5 text-gray-100">Education</h2>
-  <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-[150rem] mx-auto">
-    {#each education as school}
-      <li class="group p-6 rounded-xl bg-gradient-to-r bg-white hover:shadow-lg transition-shadow duration-300 dark:from-blue-800 dark:to-gray-900">
-        <h2 class="text-xl font-semibold mb-4 text-blue-900 dark:text-green-200">{school.title}</h2>
-        <p class="text-gray-600 mb-4 dark:text-gray-300">{school.degree}</p>
-        <p class="text-gray-500 dark:text-gray-400">{school.date}</p>
-      </li>
-    {/each}
-  </ul>
+  <h2 class="text-center text-4xl font-semibold tracking-tight text-gray-100">Education</h2>
+  <div class="py-16 flex justify-center">
+    <ul class="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
+      {#each education as school}
+        <li class="group p-8 rounded-xl bg-gradient-to-r from-white to-blue-50 hover:shadow-lg transition-shadow duration-300 dark:from-blue-800 dark:to-gray-900">
+          <h2 class="text-2xl font-semibold mb-4 text-blue-900 dark:text-green-200">{school.title}</h2>
+          {#if Array.isArray(school.degree)}
+            <ul class="list-disc pl-5 mb-4">
+              {#each school.degree as degree}
+                <li class="text-lg text-gray-600 dark:text-gray-300">{degree}</li>
+              {/each}
+            </ul>
+          {:else}
+            <p class="text-lg text-gray-600 dark:text-gray-300">{school.degree}</p>
+          {/if}
+          <p class="text-gray-500 dark:text-gray-400 font-medium">{school.date}</p>
+        </li>
+      {/each}
+    </ul>
+  </div>
   <br>
   <br>
 </div>
