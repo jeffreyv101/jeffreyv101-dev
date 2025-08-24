@@ -1,19 +1,9 @@
 import sdcLogo from '$lib/assets/sdc-club-logo.png'
 import missionizeLogo from '$lib/assets/missionize-logo.png'
-import jaarsHealthcare from '$lib/assets/jaars-healthcare.png'
 import twr360 from '$lib/assets/twr360.png'
-import repoReelsLight from '$lib/assets/repo-reels-light.png'
-import repoReelsDark from '$lib/assets/repo-reels-dark.png'
 
 // Project List
 const projects = [
-    {
-        title: "Repo Reels",
-        image: repoReelsLight,
-        skills: ["Flutter", "Node.js", "PostgreSQL", "Express.js", "GitHub API"],
-        description: "Inspired by the quick, dynamic nature of Instagram Reels, with the collaborative spirit of Git, Repo Reels will be a go-to hub for sharing and discovering bite-sized, visual content that revolves around programming.",
-        link: "WIP"
-    },
     {
         title: "Discipler",
         image: missionizeLogo,
@@ -26,14 +16,7 @@ const projects = [
         image: sdcLogo,
         skills: ["React.js", "React Router", "Vite.js", "Tailwind CSS"],
         description: "Developing a website for the Liberty University Software Development Club to help students find resources and information about the club. The website will include a blog, a resources page, and a contact page.",
-        link: "WIP"
-    },
-    {
-        title: "JAARS Healthcare Portal",
-        image: jaarsHealthcare,
-        skills: ["Salesforce Digital Experience", "Lightning Apps"],
-        description: "Led the development of a healthcare portal for JAARS, a non-profit organization, to help missionaries and their families communicate documents and schedule time with healthcare providers in their area. The portal was developed using the organization's sandbox Salesforce account and the Salesforce Lightning Web Component framework. The project was completed in a team of 5 members using agile methodologies.",
-        link: "NA"
+        link: "https://lusdc.org"
     },
     {
         title: "TWR360 RSS.com Podcast Delivery System",

@@ -68,30 +68,6 @@
       isTyping = false;
     }
     typing();
-    
-    // Dark Mode Image Handling for Repo Reels
-    import { onMount } from 'svelte';
-
-    onMount(() => {
-      const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const updateRepoReelsImage = (event) => {
-        if (event.matches) {
-          // Dark mode is enabled
-          projects[0].image = repoReelsDark; // Update image for Repo Reels in dark mode
-        } else {
-          // Light mode is enabled
-          projects[0].image = repoReelsLight; // Update image for Repo Reels in light mode
-        }
-      };
-      // Set initial image based on current mode
-      updateRepoReelsImage(darkModeMediaQuery);
-      darkModeMediaQuery.addEventListener('change', updateRepoReelsImage);
-
-      // Cleanup listener on unmount
-      return () => {
-        darkModeMediaQuery.removeEventListener('change', updateRepoReelsImage);
-      };
-    });
 </script>
 
 <head>
