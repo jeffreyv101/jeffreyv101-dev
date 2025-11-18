@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "CustomCursive";
+    src: url("../src/lib/fonts/Rochester-Regular.ttf") format("truetype");
+}
+
 html {
     scroll-behavior: smooth;
 }
