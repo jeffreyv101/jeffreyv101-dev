@@ -13,15 +13,24 @@
     const education = educationData;
 
     // Modal state
+    /**
+     * @type {{ title: any; image: any; company: any; location: any; date: any; skills: any; highlights: any; description: any; } | null}
+     */
     let selectedJob = null;
     let showModal = false;
 
+    /**
+     * @param {{ title: any; image: any; company: any; location: any; date: any; skills: any; highlights: any; description: any; } | null} job
+     */
     function openModal(job) {
         selectedJob = job;
         showModal = true;
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
 
+    /**
+     * @returns {void}
+     */
     function closeModal() {
         showModal = false;
         selectedJob = null;
@@ -29,6 +38,9 @@
     }
 
     // Close modal on Escape key
+    /**
+     * @param {{ key: string; }} event
+     */
     function handleKeydown(event) {
         if (event.key === 'Escape' && showModal) {
             closeModal();
@@ -67,8 +79,8 @@
 
 <main>
     <Header />
-    <div id="hero" class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-900 to-green-900 text-center px-4">
-        <h1 style="font-family: 'CustomCursive'" class="text-4xl tracking-wide font-extrabold text-white sm:text-6xl lg:text-7xl">Jeffrey Vandever</h1>
+    <div id="hero" class="flex flex-col items-center justify-center lg:tracking-tighter min-h-screen bg-gradient-to-b from-blue-900 to-green-900 text-center px-4">
+        <h1 style="font-family: 'CustomCursive'" class="text-4xl font-extrabold text-white sm:text-6xl lg:text-7xl">Jeffrey Vandever</h1>
         <h3 class="text-xlitalic text-white pt-2">Building Technology that Empowers People.</h3>
         <p class="text-md font-bold text-blue-100 italic dark:text-green-200">
         → {typedChar}
@@ -131,19 +143,17 @@
 
     <!-- Modal Overlay -->
     {#if showModal && selectedJob}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div 
         class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 border-0"
         on:click={closeModal}
-        on:keydown={handleKeydown}
-        role="button"
-        tabindex="0"
-        aria-label="Close modal overlay"
     >
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div 
             class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border-2 border-green-500/30"
             on:click={(e) => e.stopPropagation()}
-            on:keydown={(e) => e.stopPropagation()}
-            role="document"
         >
             <!-- Modal Header -->
             <div class="sticky top-0 bg-gradient-to-r from-green-800 to-blue-800 p-6 rounded-t-2xl border-b border-green-500/30">
@@ -231,5 +241,9 @@
         </div>
     </div>
     {/if}
+
+    
+
+    <Footer />
 
 </main>
