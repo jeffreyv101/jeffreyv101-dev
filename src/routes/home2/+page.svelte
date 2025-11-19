@@ -1,6 +1,16 @@
 <script>
+    import { onMount } from 'svelte';
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import Header from '$lib/components/+Header.svelte';
     import Footer from '$lib/components/+Footer.svelte';
+
+    import profilePic from '$lib/assets/about/profile.jpg';
+    import genworthCeo from '$lib/assets/about/genworth-ceo.jpeg';
+    import spiritBand from '$lib/assets/about/spirit-band.jpeg';
+
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger);
 
     // Import skills, experience, projects, and education data
     import experienceData from '$lib/components/experience';
@@ -11,6 +21,167 @@
     const projects = projectsData;
     import educationData from '$lib/components/education.json';
     const education = educationData;
+
+    // Flatten all skills into one array
+    const allSkills = skills.flatMap(category => category.skills);
+
+    // Tooltip state
+    /**
+     * @type {string | null}
+     */
+    let hoveredSkill = null;
+    let tooltipX = 0;
+    let tooltipY = 0;
+
+    /**
+     * @param {MouseEvent | FocusEvent} event
+     * @param {string} skillName
+     */
+    function showTooltip(event, skillName) {
+        hoveredSkill = skillName;
+        if (event instanceof MouseEvent) {
+            tooltipX = event.clientX;
+            tooltipY = event.clientY;
+        }
+    }
+
+    function hideTooltip() {
+        hoveredSkill = null;
+    }
+
+    // GSAP Animation
+    onMount(() => {
+        // Hero section animations
+        const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+        
+        heroTimeline
+            // Animate welcome text
+            .fromTo('.hero-welcome', 
+                { opacity: 0, y: -30 },
+                { opacity: 1, y: 0, duration: 0.8 }
+            )
+            // Animate main name
+            .fromTo('.hero-name',
+                { opacity: 0, scale: 0.8, rotateX: -20 },
+                { opacity: 1, scale: 1, rotateX: 0, duration: 1 },
+                '-=0.4'
+            )
+            // Animate tagline
+            .fromTo('.hero-tagline',
+                { opacity: 0, x: -50 },
+                { opacity: 1, x: 0, duration: 0.8 },
+                '-=0.6'
+            )
+            // Animate typing text container
+            .fromTo('.hero-typing',
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.6 },
+                '-=0.4'
+            )
+            // Animate buttons
+            .fromTo('.hero-buttons',
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 0.8 },
+                '-=0.4'
+            )
+            // Animate profile picture with bounce
+            .fromTo('.hero-image',
+                { opacity: 0, scale: 0.5, rotation: -10 },
+                { 
+                    opacity: 1, 
+                    scale: 1, 
+                    rotation: 0, 
+                    duration: 1,
+                    ease: 'back.out(1.7)'
+                },
+                '-=0.8'
+            );
+
+        // Add floating animation to profile picture
+        gsap.to('.hero-image', {
+            y: -20,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: 'power1.inOut',
+            delay: 1.5
+        });
+
+        // Add subtle glow pulse to buttons
+        gsap.to('.hero-button', {
+            boxShadow: '0 0 30px rgba(34, 197, 94, 0.4)',
+            duration: 1.5,
+            repeat: -1,
+            yoyo: true,
+            ease: 'power1.inOut',
+            stagger: 0.2
+        });
+
+        const track = document.querySelector('.skills-track');
+        if (track) {
+            // Duplicate skills for seamless loop
+            const trackWidth = track.scrollWidth;
+            
+            // Create infinite scrolling animation
+            gsap.to('.skills-track', {
+                x: -trackWidth / 2,
+                duration: 60,
+                ease: 'none',
+                repeat: -1,
+            });
+        }
+
+        // Animate experience cards on scroll
+        const experienceCards = document.querySelectorAll('.experience-card');
+        experienceCards.forEach((card, index) => {
+            gsap.fromTo(card,
+                {
+                    opacity: 0,
+                    y: 100,
+                    scale: 0.9,
+                    rotateX: -15,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    rotateX: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 80%',
+                        end: 'top 50%',
+                        scrub: 1,
+                        toggleActions: 'play none none reverse',
+                    },
+                    delay: (index % 2) * 0.2, // Stagger based on column position
+                }
+            );
+        });
+
+        // Animate the section title
+        const experienceTitle = document.querySelector('.experience-title');
+        if (experienceTitle) {
+            gsap.fromTo(experienceTitle,
+                {
+                    opacity: 0,
+                    y: -50,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: experienceTitle,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse',
+                    },
+                }
+            );
+        }
+    });
 
     // Modal state
     /**
@@ -80,41 +251,84 @@
 <main>
     <Header />
     <div id="hero" class="flex flex-col items-center justify-center lg:tracking-tighter min-h-screen bg-gradient-to-b from-blue-900 to-green-900 text-center px-4">
-        <h1 style="font-family: 'CustomCursive'" class="text-4xl font-extrabold text-white sm:text-6xl lg:text-7xl">Jeffrey Vandever</h1>
-        <h3 class="text-xlitalic text-white pt-2">Building Technology that Empowers People.</h3>
-        <p class="text-md font-bold text-blue-100 italic dark:text-green-200">
-        → {typedChar}
-        </p>
-        <div class="flex items-center justify-center gap-6">
-            <a
-                href="#experience"
-                class="mt-4 inline-block px-4 py-2 text-md font-medium text-white bg-gray-600 rounded-lg shadow-lg hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-900 transition duration-300"
-            >
-                View my Work
-            </a>
-            <a 
-                href="#contact" 
-                class="mt-4 inline-block px-4 py-2 text-md font-medium text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 dark:bg-green-500 dark:hover:bg-green-600 transition duration-300"
-            >
-                Read My Story
-            </a>
-            <a 
-                href="#contact" 
-                class="mt-4 inline-block px-4 py-2 text-md font-medium text-white bg-green-600 rounded-lg shadow-lg hover:bg-green-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition duration-300"
-            >
-                Get in Touch!
-            </a>
+        <div class="flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-12 w-full max-w-7xl">
+            <div class="xl:text-left">
+                <h2 style="font-family: 'CustomCursive'" class="hero-welcome text-white text-2xl opacity-0">Welcome! I'm </h2>
+                <h2 style="font-family: 'CustomCursive'" class="hero-name text-5xl font-extrabold text-white sm:text-6xl lg:text-8xl opacity-0">Jeffrey Vandever</h2>
+                <h3 class="hero-tagline text-xl italic text-white pt-2 xl:pt-4 opacity-0">Building Technology that Empowers People.</h3>
+                <p class="hero-typing text-md font-bold text-blue-100 italic dark:text-green-200 opacity-0">
+                → {typedChar}
+                </p>
+                <div class="hero-buttons flex items-center justify-center gap-6 xl:justify-start opacity-0">
+                    <a
+                        href="#experience"
+                        class="hero-button mt-4 inline-block px-4 py-2 text-md font-medium text-white bg-gray-600 rounded-lg shadow-lg hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-900 transition duration-300"
+                    >
+                        View my Work
+                    </a>
+                    <a 
+                        href="#contact" 
+                        class="hero-button mt-4 inline-block px-4 py-2 text-md font-medium text-white bg-green-600 rounded-lg shadow-lg hover:bg-green-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition duration-300"
+                    >
+                        Contact Me!
+                    </a>
+                </div>
+            </div>
+            <img src={profilePic} alt="Profile" class="hero-image hidden rounded-xl mt-4 mx-4 h-96 xl:block xl:mt-0 max-w-xs xl:max-w-md opacity-0" />
         </div>
     </div>
 
-    <div id="experience" class="relative isolate px-6 pt-14 bg-gradient-to-b from-green-900 to-green-700 lg:px-8">
-        <h2 class="text-center text-4xl font-semibold tracking-tight text-gray-100">Experience</h2>
-        <ul class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-8 max-w-[150rem] mx-auto">
+    <div id="about-me" class="bg-gradient-to-b from-green-700 to-green-800 pt-14 px-8">
+        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-bold text-center text-white">Who I am</h2>
+        <h3 style="font-family: 'CustomCursive'" class="text-2xl text-center text-white italic">Excellence in every line of code.</h3>
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-8 max-w-[150rem] mx-auto">
+            <img src={spiritBand} alt="Jeffrey Vandever playing in the Spirit Band" class="mx-auto rounded-lg shadow-lg max-h-80"/>
+            <p class="text-left pr-8 text-gray-200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni est architecto, saepe ex aut tempora provident quia ipsum repellat non ullam ipsa accusantium explicabo, sapiente dolorem tempore totam? Ex, debitis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aperiam possimus maiores voluptates nulla quos architecto adipisci? Fuga dolore dicta harum facilis ut nam, temporibus doloremque sint reprehenderit, quas quasi?</p>
+
+            <p class="text-left pl-8 text-gray-200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque voluptatum libero vitae, laboriosam perspiciatis minus optio rerum aliquam iure ad id quam totam pariatur reiciendis adipisci odio? Dolores, a possimus? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, beatae labore. Blanditiis quod odit voluptates modi vero? Sint ea quam rem sunt illum id voluptate nulla iste? Quas, rem possimus.</p>
+            <img src={genworthCeo} alt="Jeffrey Vandever with other interns and Genworth Financial CEO" class="mx-auto rounded-lg shadow-lg max-h-80"/>
+        </div>
+
+        <!--Summary of my core values-->
+
+        <!--Scrolling Skills Showcase-->
+        <div class="py-12 overflow-hidden">
+            <h3 class="text-center text-2xl font-semibold text-white mb-6">Technical Skills</h3>
+            <div class="relative">
+                <!-- Gradient overlays for fade effect -->
+                <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-green-800 to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-green-800 to-transparent z-10"></div>
+                
+                <!-- Skills track container -->
+                <div class="flex overflow-hidden">
+                    <div class="skills-track flex gap-8 py-4">
+                        {#each [...allSkills, ...allSkills] as skill}
+                            <button
+                                class="flex-shrink-0 w-16 h-16 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg p-3 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/30 cursor-pointer"
+                                on:mouseenter={(e) => showTooltip(e, skill.name)}
+                                on:mouseleave={hideTooltip}
+                                on:focus={(e) => showTooltip(e, skill.name)}
+                                on:blur={hideTooltip}
+                                aria-label={skill.name}
+                            >
+                                <div class="text-green-200 w-full h-full flex items-center justify-center">
+                                    {@html skill.svg}
+                                </div>
+                            </button>
+                        {/each}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div id="experience" class="relative isolate px-6 pt-14 bg-gradient-to-b from-green-800 to-gray-700 lg:px-8">
+        <h2 style="font-family: 'CustomCursive'" class="experience-title text-center text-6xl font-semibold tracking-tight text-gray-100">Experience</h2>
+        <ul class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-8 max-w-[150rem] mx-auto pb-14">
             {#if experience.length === 0}
             <li class="text-center text-gray-500 dark:text-gray-400">No experience listed yet.</li>
             {/if}
             {#each experience as job}
-            <li>
+            <li class="experience-card">
                 <button 
                     on:click={() => openModal(job)}
                     class="w-full bg-gray-800/50 backdrop-blur-md p-6 rounded-lg shadow-md border border-gray-700 hover:bg-gray-700/60 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300 cursor-pointer text-left"
@@ -240,6 +454,16 @@
             </div>
         </div>
     </div>
+    {/if}
+
+    <!-- Tooltip for skills -->
+    {#if hoveredSkill}
+        <div 
+            class="fixed z-50 bg-gray-900 text-white px-4 py-2 rounded-lg shadow-lg border border-green-500/50 pointer-events-none"
+            style="left: {tooltipX + 10}px; top: {tooltipY + 10}px;"
+        >
+            {hoveredSkill}
+        </div>
     {/if}
 
     
