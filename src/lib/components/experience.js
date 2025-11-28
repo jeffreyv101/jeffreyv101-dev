@@ -8,7 +8,7 @@ let experience = [
         "image": genworth,
         "company": "Genworth Financial",
         "location": "Richmond, VA",
-        "date": "May 2026 - May 2028",
+        "date": "July 2026 - Present",
         "skills": ["TBD"],
         "highlights": [
             "Exploring automation, cloud, and AI within a 2-year rotational leadership program."

@@ -15,13 +15,16 @@ const projects = [
         "title": "Py in a Box",
         "image": pyinaboxLogo,
         "demo-image": pythonRunner,
+        "company": "CloudFit Software",
+        "location": "Lynchburg, VA",
+        "date": "August 2025 - May 2026",
         "highlights": [
             "Workflow Engine Extension",
             "Multi-Language Script Support",
             "Sandboxed Execution Environment"
         ],
         "skills": ["Kubernetes", "Python", "PowerShell", "Docker"],
-        "context": "CloudFit workflow users cannot take full advantage due to limited language support.",
+        "context": "CloudFit workflow users cannot take full advantage of the workflow engine due to limited language support.",
         "description": [
             "As part of a capstone project with CloudFit Software, extended the organization's workflow engine to execute Python and PowerShell scripts within a sandboxed environment using Docker containers orchestrated by Kubernetes. Developed a user-friendly interface for script submission and result retrieval, enhancing the platform's versatility and user experience."
         ],
@@ -31,6 +34,9 @@ const projects = [
         "title": "Software Development Club Website",
         "image": sdcLogo,
         "demo-image": sdcDemo,
+        "company": "Liberty University",
+        "location": "Lynchburg, VA",
+        "date": "July 2025 - September 2025",
         "skills": ["React.js", "React Router", "Vite.js", "Tailwind CSS"],
         "highlights": [
             "Club Information Hub",
@@ -48,6 +54,9 @@ const projects = [
         "skills": ["Google Gemini", "Google Cloud Platform", "Node.js", "AWS EC2", "S3"],
         "image": twr360,
         "demo-image": twr360Demo,
+        "company": "Trans World Radio",
+        "location": "Cary, NC",
+        "date": "May 2024 - Aug 2024",
         "highlights": [
             "Generative AI Chatbot Integration",
             "Content Discovery Enhancement",
@@ -64,6 +73,9 @@ const projects = [
         "skills": ["AWS EC2", "Python"],
         "image": twr360,
         "demo-image": "",
+        "company": "Liberty University Software Development Club",
+        "location": "Lynchburg, VA",
+        "date": "August 2024 - December 2024",
         "highlights": [
             "JSON to XML Feed Converter",
             "Robust Podcast Delivery System",

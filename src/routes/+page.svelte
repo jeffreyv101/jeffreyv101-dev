@@ -10,10 +10,14 @@
     import ProjectCard from '$lib/components/ProjectCard.svelte';
     import DetailModal from '$lib/components/DetailModal.svelte';
 
+    // Pictures
     import speechPic from '$lib/assets/about/speech.jpeg';
     import profilePic from '$lib/assets/about/profile.jpg';
     import genworthCeo from '$lib/assets/about/genworth-ceo.jpeg';
     import spiritBand from '$lib/assets/about/spirit-band.jpeg';
+    import spiritBand2 from '$lib/assets/about/spirit-band2.jpeg';
+    import spiritBand3 from '$lib/assets/about/spirit-band3.jpg';
+    import marchingBand from '$lib/assets/about/marching-band.jpeg';
 
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
@@ -289,63 +293,67 @@
 
 <main>
     <Header />
-    <div id="hero" class="flex flex-col items-center justify-center lg:tracking-tighter h-fit md:min-h-screen bg-gradient-to-b from-blue-900 to-green-900 text-center px-4">
-        <div class="mt-32 mb-20 flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-12 w-full max-w-7xl">
+    <div id="hero" class="flex flex-col items-center justify-center px-4 text-center lg:tracking-tighter h-fit md:min-h-screen bg-gradient-to-b from-blue-900 to-green-900">
+        <div class="flex flex-col items-center justify-center w-full gap-8 mt-32 mb-20 xl:flex-row xl:gap-12 max-w-7xl">
             <div class="xl:text-left">
-                <h2 style="font-family: 'CustomCursive'" class="hero-welcome text-white text-2xlopacity-0">Welcome! I'm </h2>
-                <h2 style="font-family: 'CustomCursive'" class="hero-name text-5xl font-extrabold text-white sm:text-6xl lg:text-8xl opacity-0">Jeffrey Vandever</h2>
-                <h3 class="hero-tagline text-xl italic text-white pt-2 xl:pt-4 opacity-0">Building Technology that Empowers People.</h3>
-                <p class="hero-typing text-md font-bold text-blue-100 italic dark:text-green-200 opacity-0">
+                <h2 style="font-family: 'CustomCursive'" class="text-white hero-welcome text-2xlopacity-0">Welcome! I'm </h2>
+                <h2 style="font-family: 'CustomCursive'" class="text-5xl font-extrabold text-white opacity-0 hero-name sm:text-6xl lg:text-8xl">Jeffrey Vandever</h2>
+                <h3 class="pt-2 text-xl italic text-white opacity-0 hero-tagline xl:pt-4">Building Technology that Empowers People.</h3>
+                <p class="italic font-bold text-blue-100 opacity-0 hero-typing text-md dark:text-green-200">
                 → {typedChar}
                 </p>
-                <div class="hero-buttons flex items-center justify-center gap-6 xl:justify-start opacity-0">
+                <div class="flex items-center justify-center gap-6 opacity-0 hero-buttons xl:justify-start">
                     <a
                         href="#experience"
-                        class="hero-button mt-4 inline-block px-4 py-2 text-md font-medium text-white bg-gray-600 rounded-lg shadow-lg hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-900 transition duration-300"
+                        class="inline-block px-4 py-2 mt-4 font-medium text-white transition duration-300 bg-gray-600 rounded-lg shadow-lg hero-button text-md hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-900"
                     >
                         View my Work
                     </a>
                     <a 
                         href="#contact" 
-                        class="hero-button mt-4 inline-block px-4 py-2 text-md font-medium text-white bg-green-600 rounded-lg shadow-lg hover:bg-green-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition duration-300"
+                        class="inline-block px-4 py-2 mt-4 font-medium text-white transition duration-300 bg-green-600 rounded-lg shadow-lg hero-button text-md hover:bg-green-700 dark:bg-blue-500 dark:hover:bg-blue-600"
                     >
                         Contact Me!
                     </a>
                 </div>
             </div>
-            <img src={profilePic} alt="Profile" class="hero-image hidden rounded-xl mt-4 mx-4 h-96 xl:block xl:mt-0 max-w-xs xl:max-w-md opacity-0" />
+            <img src={profilePic} alt="Profile" class="hidden max-w-xs mx-4 mt-4 opacity-0 hero-image rounded-xl h-96 xl:block xl:mt-0 xl:max-w-md" />
         </div>
     </div>
 
-    <div id="about-me" class="bg-gradient-to-b from-green-700 to-green-800 pt-14 px-8">
+    <div id="about-me" class="px-8 bg-gradient-to-b from-green-700 to-green-800 pt-14">
         <h2 style="font-family: 'CustomCursive'" class="text-6xl font-bold text-center text-white">Who I am</h2>
-        <h3 style="font-family: 'CustomCursive'" class="text-2xl text-center text-white italic">Excellence in every line of code.</h3>
+        <h3 style="font-family: 'CustomCursive'" class="text-2xl italic text-center text-white">Excellence and Investment in others</h3>
         
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-8 max-w-[150rem] mx-auto pb-8">
             <!-- First Row: Image Left, Text Right -->
             <div class="flex items-center justify-center">
-                <img src={speechPic} alt="Jeffrey Vandever playing in the Spirit Band" class="rounded-lg shadow-lg max-h-96 w-max object-cover"/>
+                <img src={speechPic} alt="Jeffrey Vandever playing in the Spirit Band" class="object-cover rounded-lg shadow-lg max-h-96 w-max"/>
             </div>
-            <div class="flex flex-col justify-center text-left xl:pr-8 text-gray-200 space-y-4">
-                <p class="text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni est architecto, saepe ex aut tempora provident quia ipsum repellat non ullam ipsa accusantium explicabo, sapiente dolorem tempore totam? Ex, debitis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aperiam possimus maiores voluptates nulla quos architecto adipisci?
-                </p>
-                <p class="text-lg leading-relaxed">
-                    Fuga dolore dicta harum facilis ut nam, temporibus doloremque sint reprehenderit, quas quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eum dignissimos ducimus itaque ipsam tempore ad minus et earum adipisci dicta sapiente, pariatur, officiis nesciunt dolor?
-                </p>
+            <div class="flex flex-col justify-center text-left xl:pr-8">
+                <div class="p-6 space-y-4 border border-gray-700 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md">
+                    <p class="text-lg leading-relaxed text-gray-200">
+                        I'm someone who believes that excellence isn't about perfection — it's about <span class="font-bold text-green-300">consistency, curiosity, and care for others.</span>
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-200">
+                        My drive as a technologist comes from a desire to build solutions that make people's work, learning, and communication easier and more meaningful. Whether I'm developing software, leading a team, or mentoring peers, I aim to set a high standard not only in the quality of my work but in how I treat the people I work with.
+                    </p>
+                </div>
             </div>
             
             <!-- Second Row: Text Left, Image Right -->
-            <div class="flex flex-col justify-center text-left xl:pl-8 text-gray-200 space-y-4">
-                <p class="text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque voluptatum libero vitae, laboriosam perspiciatis minus optio rerum aliquam iure ad id quam totam pariatur reiciendis adipisci odio? Dolores, a possimus? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, beatae labore.
-                </p>
-                <p class="text-lg leading-relaxed">
-                    Blanditiis quod odit voluptates modi vero? Sint ea quam rem sunt illum id voluptate nulla iste? Quas, rem possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum illum minima quos praesentium possimus suscipit ipsam porro iste nisi rem?
-                </p>
+            <div class="flex flex-col justify-center text-left xl:pl-8">
+                <div class="p-6 space-y-4 border border-gray-700 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md">
+                    <p class="text-lg leading-relaxed text-gray-200">
+                        I value clarity over complexity, empathy over ego, and growth over comfort. Technology changes fast, but the ability to <span class="font-bold text-green-300">listen, learn, and lead with integrity</span> never goes out of style. I've learned that progress is most rewarding when it lifts others with you — whether that's helping a team member debug a problem, guiding students through their first project, or delivering a product that genuinely helps an organization thrive.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-200">
+                        At the end of the day, I want my work to be known for two things: <span class="font-bold text-green-300">Excellence in execution</span> and a <span class="font-bold text-green-300">genuine investment in people.</span>
+                    </p>
+                </div>
             </div>
             <div class="flex items-center justify-center">
-                <img src={genworthCeo} alt="Jeffrey Vandever with other interns and Genworth Financial CEO" class="rounded-lg shadow-lg max-h-96 w-max object-cover"/>
+                <img src={genworthCeo} alt="Jeffrey Vandever with other interns and Genworth Financial CEO" class="object-cover rounded-lg shadow-lg max-h-96 w-max"/>
             </div>
         </div>
 
@@ -358,8 +366,8 @@
     <!-- Skills Modal -->
     <SkillsModal showModal={showSkillsModal} {skills} onClose={closeSkillsModal} />
     
-    <div id="experience" class="relative isolate px-6 pt-14 bg-gradient-to-b from-green-800 to-green-900 lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="experience-title text-center text-6xl font-semibold tracking-tight text-gray-100">Experience</h2>
+    <div id="experience" class="relative px-6 isolate pt-14 bg-gradient-to-b from-green-800 to-green-900 lg:px-8">
+        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold tracking-tight text-center text-gray-100 experience-title">Experience</h2>
         <ul class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-8 max-w-[150rem] mx-auto pb-14">
             {#if experience.length === 0}
             <li class="text-center text-gray-500 dark:text-gray-400">No experience listed yet.</li>
@@ -375,8 +383,8 @@
     <!-- Experience Modal -->
     <DetailModal showModal={showExperienceModal} selectedItem={selectedJob} type="experience" onClose={closeExperienceModal} />
 
-    <div id="projects" class="relative isolate px-6 pt-14 mb-20 bg-gradient-to-b from-green-900 to-gray-800 lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="projects-title text-center text-6xl font-semibold tracking-tight text-gray-100">Projects</h2>
+    <div id="projects" class="relative px-6 pb-20 isolate pt-14 bg-gradient-to-b from-green-900 to-gray-800 lg:px-8">
+        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold tracking-tight text-center text-gray-100 projects-title">Projects</h2>
         <ul class="grid grid-cols-1 xl:grid-cols-3 gap-5 mt-8 max-w-[150rem] mx-auto pb-14">
             {#if projects.length === 0}
             <li class="text-center text-gray-500 dark:text-gray-400">No projects listed yet.</li>
@@ -391,6 +399,77 @@
 
     <!-- Project Modal -->
     <DetailModal showModal={showProjectModal} selectedItem={selectedProject} type="project" onClose={closeProjectModal} />
+
+    <div id="education" class="relative px-6 py-20 isolate bg-gradient-to-b from-gray-800 to-gray-900 lg:px-8">
+        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold tracking-tight text-center text-gray-100">Education</h2>
+        <div class="max-w-4xl mx-auto mt-12">
+            {#each education as edu}
+                <div class="p-8 border border-gray-700 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md">
+                    <h3 class="text-3xl font-bold text-white">{edu.title}</h3>
+                    <p class="mt-2 text-lg italic text-green-300">{edu.date}</p>
+                    <div class="mt-6 space-y-3">
+                        {#each edu.degree as deg}
+                            <div class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1 text-blue-400">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                                <p class="text-lg text-gray-200">{deg}</p>
+                            </div>
+                        {/each}
+                        {#if edu.minor}
+                            <div class="flex items-start gap-3 mt-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1 text-green-400">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                                <p class="text-base italic text-gray-300">{edu.minor}</p>
+                            </div>
+                        {/if}
+                    </div>
+                </div>
+            {/each}
+        </div>
+    </div>
+
+    <div id="contact" class="relative px-6 py-20 bg-gray-900 isolate bg-gradient-to-b lg:px-8">
+        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold tracking-tight text-center text-gray-100">Contact Me</h2>
+        <div class="max-w-2xl mx-auto mt-12">
+            <form method="POST" action="https://formspree.io/f/xqakqokj" class="p-8 space-y-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md">
+            <input type="hidden" name="_subject" value="Contact request from portfolio website" />
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-300">Your Email</label>
+                <input 
+                type="email" 
+                name="_replyto" 
+                id="email" 
+                placeholder="Your email" 
+                required 
+                class="block w-full p-2 mt-1 text-gray-300 placeholder-gray-400 bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-green-500 focus:ring-green-500"
+                />
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-300">Your Message</label>
+                <textarea 
+                name="message" 
+                id="message" 
+                placeholder="Your message" 
+                required 
+                rows="5" 
+                class="block w-full p-2 mt-1 text-gray-300 placeholder-gray-400 bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-green-500 focus:ring-green-500"
+                ></textarea>
+            </div>
+            <div class="text-center">
+                <button 
+                type="submit" 
+                class="inline-flex items-center px-6 py-3 text-base font-medium text-white transition duration-300 bg-green-500 border border-transparent rounded-md shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                >
+                Send
+                </button>
+            </div>
+            </form>
+        </div>
+    </div>
 
     <Footer />
 

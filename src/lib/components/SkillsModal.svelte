@@ -25,7 +25,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div 
-    class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
     on:click={onClose}
 >
     <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -35,15 +35,15 @@
         on:click={(e) => e.stopPropagation()}
     >
         <!-- Modal Header -->
-        <div class="sticky top-0 bg-gradient-to-r from-green-800 to-blue-800 p-6 rounded-t-2xl border-b border-green-500/30 z-10">
-            <div class="flex justify-between items-center">
+        <div class="sticky top-0 z-10 p-6 border-b bg-gradient-to-r from-green-800 to-blue-800 rounded-t-2xl border-green-500/30">
+            <div class="flex items-center justify-between">
                 <h2 class="text-3xl font-bold text-white">All Technical Skills</h2>
                 <button 
                     on:click={onClose}
-                    class="text-gray-300 hover:text-white hover:bg-white/10 rounded-full p-2 transition-all duration-200"
+                    class="p-2 text-gray-300 transition-all duration-200 rounded-full hover:text-white hover:bg-white/10"
                     aria-label="Close modal"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
@@ -54,17 +54,17 @@
         <div class="p-6 space-y-8">
             {#each skills as category}
                 <div>
-                    <h3 class="text-2xl font-semibold text-green-400 mb-4 flex items-center gap-2">
+                    <h3 class="flex items-center gap-2 mb-4 text-2xl font-semibold text-green-400">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
                         {category.title}
                     </h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5">
                         {#each category.skills as skill}
-                            <div class="bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/20 border border-gray-700 hover:border-green-500/50">
-                                <div class="text-green-300 w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                            <div class="p-2 transition-all duration-300 border border-gray-700 rounded-lg bg-white/5 hover:bg-white/10 backdrop-blur-sm hover:scale-105 hover:shadow-lg hover:shadow-green-500/20 hover:border-green-500/50">
+                                <div class="flex items-center justify-center w-8 h-8 mx-auto mb-2 text-green-300">
                                     {@html skill.svg}
                                 </div>
-                                <p class="text-center text-sm text-gray-300 font-medium">{skill.name}</p>
+                                <p class="text-sm font-medium text-center text-gray-300">{skill.name}</p>
                             </div>
                         {/each}
                     </div>
@@ -73,10 +73,10 @@
         </div>
 
         <!-- Modal Footer -->
-        <div class="sticky bottom-0 bg-gradient-to-r from-gray-800 to-gray-900 p-4 border-t border-gray-700 rounded-b-2xl">
+        <div class="sticky bottom-0 p-4 border-t border-gray-700 bg-gradient-to-r from-gray-800 to-gray-900 rounded-b-2xl">
             <button 
                 on:click={onClose}
-                class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                class="w-full px-6 py-3 font-semibold text-white transition-colors duration-200 bg-green-600 rounded-lg hover:bg-green-700"
             >Close</button>
         </div>
     </div>

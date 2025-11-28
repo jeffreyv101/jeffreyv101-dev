@@ -54,7 +54,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div 
-    class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 border-0"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 border-0 bg-black/70 backdrop-blur-sm"
     on:click={onClose}
 >
     <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -65,37 +65,29 @@
     >
         <!-- Modal Header -->
         <div class="sticky top-0 bg-gradient-to-r {colors.headerGradient} rounded-t-2xl border-b {colors.headerBorder}">
-            {#if type === 'project' && selectedItem["demo-image"] && selectedItem["demo-image"] !== ''}
-                <div class="relative w-full h-80 overflow-hidden">
-                    <img 
-                        src={selectedItem["demo-image"]} 
-                        alt="{selectedItem.title} demo" 
-                        class="w-full h-full object-cover"
-                    >
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900 via-blue-900/70 to-transparent"></div>
-                </div>
-            {/if}
-            <div class="flex justify-between items-start p-6">
+            <div class="flex items-start justify-between p-6">
                 <div>
                     <h2 class="text-3xl font-bold text-white">{selectedItem.title}</h2>
                     <div class="flex items-center gap-4 mt-2">
                         {#if selectedItem.image}
                             <img src={selectedItem.image} alt="{type === 'experience' ? selectedItem.company : selectedItem.title} logo" class="h-12 mt-2 mb-1 rounded-md"/>
                         {/if}
-                        {#if type === 'experience'}
                             <div>
-                                <p class="text-green-200 text-lg mt-1">{selectedItem.company}</p>
-                                <p class="text-gray-300 text-sm mt-1">{selectedItem.location} • {selectedItem.date}</p>
+                                {#if selectedItem.company}
+                                <p class="mt-1 text-lg text-green-200">{selectedItem.company}</p>
+                                {/if}
+                                {#if selectedItem.location || selectedItem.date}
+                                <p class="mt-1 text-sm text-gray-300">{selectedItem.location} • {selectedItem.date}</p>
+                                {/if}
                             </div>
-                        {/if}
                     </div>
                 </div>
                 <button 
                     on:click={onClose}
-                    class="text-gray-300 hover:text-white hover:bg-white/10 rounded-full p-2 transition-all duration-200"
+                    class="p-2 text-gray-300 transition-all duration-200 rounded-full hover:text-white hover:bg-white/10"
                     aria-label="Close modal"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
@@ -138,33 +130,43 @@
             {#if type === 'project' && selectedItem.context}
             <!-- Context Section (Projects only) -->
             <div>
-                <h3 class="text-xl font-semibold text-yellow-400 mb-3 flex items-center gap-2">
+                <h3 class="flex items-center gap-2 mb-3 text-xl font-semibold text-yellow-400">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bulb"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" /><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" /><path d="M9.7 17l4.6 0" /></svg>
                     Problem Statement
                 </h3>
-                <p class="text-gray-300 leading-relaxed">{selectedItem.context}</p>
+                <p class="leading-relaxed text-gray-300">{selectedItem.context}</p>
             </div>
             {/if}
 
             <!-- Description Section -->
             <div>
-                <h3 class="text-xl font-semibold text-purple-400 mb-3 flex items-center gap-2">
+                <h3 class="flex items-center gap-2 mb-3 text-xl font-semibold text-purple-400">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-info-square-rounded"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9h.01" /><path d="M11 12h1v4h1" /><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" /></svg>
                     {type === 'experience' ? 'Description' : 'Project Description'}
                 </h3>
                 <div class="space-y-3">
                     {#each selectedItem.description as paragraph}
-                        <p class="text-gray-300 leading-relaxed">
+                        <p class="leading-relaxed text-gray-300">
                             {paragraph}
                         </p>
                     {/each}
                 </div>
+
+                {#if type === 'project' && selectedItem["demo-image"] && selectedItem["demo-image"] !== ''}
+                    <div class="mt-6">
+                        <img 
+                            src={selectedItem["demo-image"]} 
+                            alt="{selectedItem.title} demo" 
+                            class="w-full border border-gray-700 rounded-lg shadow-lg"
+                        >
+                    </div>
+                {/if}
             </div>
 
             {#if type === 'project' && selectedItem.link && selectedItem.link !== 'NA' && selectedItem.link !== 'WIP'}
             <!-- Link Section (Projects only) -->
             <div>
-                <h3 class="text-xl font-semibold text-cyan-400 mb-3 flex items-center gap-2">
+                <h3 class="flex items-center gap-2 mb-3 text-xl font-semibold text-cyan-400">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
                     Project Link
                 </h3>
@@ -172,7 +174,7 @@
                     href={selectedItem.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-200 underline underline-offset-4 transition-colors"
+                    class="inline-flex items-center gap-2 underline transition-colors text-cyan-300 hover:text-cyan-200 underline-offset-4"
                 >
                     Visit Project
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
@@ -182,7 +184,7 @@
         </div>
 
         <!-- Modal Footer -->
-        <div class="sticky bottom-0 bg-gradient-to-r from-gray-800 to-gray-900 p-4 border-t border-gray-700 rounded-b-2xl">
+        <div class="sticky bottom-0 p-4 border-t border-gray-700 bg-gradient-to-r from-gray-800 to-gray-900 rounded-b-2xl">
             <button 
                 on:click={onClose}
                 class="w-full {colors.button} text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
