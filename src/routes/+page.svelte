@@ -9,6 +9,10 @@
     import ExperienceCard from '$lib/components/ExperienceCard.svelte';
     import ProjectCard from '$lib/components/ProjectCard.svelte';
     import DetailModal from '$lib/components/DetailModal.svelte';
+    import ImageCarousel from '$lib/components/ImageCarousel.svelte';
+    import HeroAnimations from '$lib/components/HeroAnimations.svelte';
+    import ExperienceAnimations from '$lib/components/ExperienceAnimations.svelte';
+    import ProjectAnimations from '$lib/components/ProjectAnimations.svelte';
 
     // Pictures
     import speechPic from '$lib/assets/about/speech.jpeg';
@@ -18,6 +22,10 @@
     import spiritBand2 from '$lib/assets/about/spirit-band2.jpeg';
     import spiritBand3 from '$lib/assets/about/spirit-band3.jpg';
     import marchingBand from '$lib/assets/about/marching-band.jpeg';
+
+    // Carousel image arrays
+    const carouselImages1 = [speechPic, spiritBand3];
+    const carouselImages2 = [genworthCeo, spiritBand, spiritBand2, marchingBand];
 
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
@@ -34,177 +42,6 @@
 
     // Flatten all skills into one array
     const allSkills = skills.flatMap(category => category.skills);
-
-    // GSAP Animation
-    onMount(() => {
-        // Hero section animations
-        const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
-        
-        heroTimeline
-            // Animate welcome text
-            .fromTo('.hero-welcome', 
-                { opacity: 0, y: -30 },
-                { opacity: 1, y: 0, duration: 0.8 }
-            )
-            // Animate main name
-            .fromTo('.hero-name',
-                { opacity: 0, scale: 0.8, rotateX: -20 },
-                { opacity: 1, scale: 1, rotateX: 0, duration: 1 },
-                '-=0.4'
-            )
-            // Animate tagline
-            .fromTo('.hero-tagline',
-                { opacity: 0, x: -50 },
-                { opacity: 1, x: 0, duration: 0.8 },
-                '-=0.6'
-            )
-            // Animate typing text container
-            .fromTo('.hero-typing',
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.6 },
-                '-=0.4'
-            )
-            // Animate buttons
-            .fromTo('.hero-buttons',
-                { opacity: 0, y: 30 },
-                { opacity: 1, y: 0, duration: 0.8 },
-                '-=0.4'
-            )
-            // Animate profile picture with bounce
-            .fromTo('.hero-image',
-                { opacity: 0, scale: 0.5, rotation: -10 },
-                { 
-                    opacity: 1, 
-                    scale: 1, 
-                    rotation: 0, 
-                    duration: 1,
-                    ease: 'back.out(1.7)'
-                },
-                '-=0.8'
-            );
-
-        // Add floating animation to profile picture
-        gsap.to('.hero-image', {
-            y: -20,
-            duration: 2,
-            repeat: -1,
-            yoyo: true,
-            ease: 'power1.inOut',
-            delay: 1.5
-        });
-
-        // Add subtle glow pulse to buttons
-        gsap.to('.hero-button', {
-            boxShadow: '0 0 30px rgba(34, 197, 94, 0.4)',
-            duration: 1.5,
-            repeat: -1,
-            yoyo: true,
-            ease: 'power1.inOut',
-            stagger: 0.2
-        });
-
-        // Animate experience cards on scroll
-        const experienceCards = document.querySelectorAll('.experience-card');
-        experienceCards.forEach((card, index) => {
-            gsap.fromTo(card,
-                {
-                    opacity: 0,
-                    y: 100,
-                    scale: 0.9,
-                    rotateX: -15,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    rotateX: 0,
-                    duration: 0.5,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: card,
-                        start: 'top 90%',
-                        end: 'top 50%',
-                        scrub: 1,
-                        toggleActions: 'play none none reverse',
-                    },
-                    delay: (index % 2) * 0.2, // Stagger based on column position
-                }
-            );
-        });
-
-        // Animate the section title
-        const experienceTitle = document.querySelector('.experience-title');
-        if (experienceTitle) {
-            gsap.fromTo(experienceTitle,
-                {
-                    opacity: 0,
-                    y: -50,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: experienceTitle,
-                        start: 'top 90%',
-                        toggleActions: 'play none none reverse',
-                    },
-                }
-            );
-        }
-
-        // Animate project cards on scroll
-        const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach((card, index) => {
-            gsap.fromTo(card,
-                {
-                    opacity: 0,
-                    y: 100,
-                    scale: 0.9,
-                    rotateX: -15,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    rotateX: 0,
-                    duration: 1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: card,
-                        start: 'top 90%',
-                        end: 'top 80%',
-                        scrub: 1,
-                        toggleActions: 'play none none reverse',
-                    },
-                    delay: (index % 2) * 0.2,
-                }
-            );
-        });
-
-        // Animate the projects section title
-        const projectsTitle = document.querySelector('.projects-title');
-        if (projectsTitle) {
-            gsap.fromTo(projectsTitle,
-                {
-                    opacity: 0,
-                    y: -50,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: projectsTitle,
-                        start: 'top 85%',
-                        toggleActions: 'play none none reverse',
-                    },
-                }
-            );
-        }
-    });
 
     // Experience Modal state
     /**
@@ -294,9 +131,9 @@
 <main>
     <Header />
     <div id="hero" class="flex flex-col items-center justify-center px-4 text-center lg:tracking-tighter h-fit md:min-h-screen bg-gradient-to-b from-blue-900 to-green-900">
-        <div class="flex flex-col items-center justify-center w-full gap-8 mt-32 mb-20 xl:flex-row xl:gap-12 max-w-7xl">
+        <div class="flex flex-col items-center justify-center w-full gap-8 mt-32 mb-5 xl:flex-row xl:gap-12 max-w-7xl">
             <div class="xl:text-left">
-                <h2 style="font-family: 'CustomCursive'" class="text-white hero-welcome text-2xlopacity-0">Welcome! I'm </h2>
+                <h2 style="font-family: 'CustomCursive'" class="text-white opacity-0 md:text-2xl hero-welcome">Welcome! I'm </h2>
                 <h2 style="font-family: 'CustomCursive'" class="text-5xl font-extrabold text-white opacity-0 hero-name sm:text-6xl lg:text-8xl">Jeffrey Vandever</h2>
                 <h3 class="pt-2 text-xl italic text-white opacity-0 hero-tagline xl:pt-4">Building Technology that Empowers People.</h3>
                 <p class="italic font-bold text-blue-100 opacity-0 hero-typing text-md dark:text-green-200">
@@ -319,6 +156,9 @@
             </div>
             <img src={profilePic} alt="Profile" class="hidden max-w-xs mx-4 mt-4 opacity-0 hero-image rounded-xl h-96 xl:block xl:mt-0 xl:max-w-md" />
         </div>
+        <a href="#about-me" aria-label="Scroll down to About Me section" class="flex flex-col items-center mt-16 mb-10 text-white opacity-0 scroll-arrow animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-auto mb-20"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M18 13l-6 6" /><path d="M6 13l6 6" /></svg>
+        </a>
     </div>
 
     <div id="about-me" class="px-8 bg-gradient-to-b from-green-700 to-green-800 pt-14">
@@ -326,9 +166,9 @@
         <h3 style="font-family: 'CustomCursive'" class="text-2xl italic text-center text-white">Excellence and Investment in others</h3>
         
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-8 max-w-[150rem] mx-auto pb-8">
-            <!-- First Row: Image Left, Text Right -->
-            <div class="flex items-center justify-center">
-                <img src={speechPic} alt="Jeffrey Vandever playing in the Spirit Band" class="object-cover rounded-lg shadow-lg max-h-96 w-max"/>
+            <!-- First Row: Image Carousel Left, Text Right -->
+            <div class="flex items-center justify-center pl-8">
+                <ImageCarousel images={carouselImages1} alt="Jeffrey Vandever photos" />
             </div>
             <div class="flex flex-col justify-center text-left xl:pr-8">
                 <div class="p-6 space-y-4 border border-gray-700 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md">
@@ -352,8 +192,8 @@
                     </p>
                 </div>
             </div>
-            <div class="flex items-center justify-center">
-                <img src={genworthCeo} alt="Jeffrey Vandever with other interns and Genworth Financial CEO" class="object-cover rounded-lg shadow-lg max-h-96 w-max"/>
+            <div class="flex items-center justify-center pr-8">
+                <ImageCarousel images={carouselImages2} alt="Jeffrey Vandever with Genworth Financial" />
             </div>
         </div>
 
@@ -470,6 +310,12 @@
             </form>
         </div>
     </div>
+    
+    <HeroAnimations />
+    <ExperienceAnimations />
+    <ProjectAnimations />
+    <Header />
+            
 
     <Footer />
 
