@@ -3,6 +3,15 @@
     import { gsap } from 'gsap';
 
     onMount(() => {
+        // Disable animations on mobile for better performance
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) {
+            // Set opacity to 1 for all elements on mobile
+            document.querySelectorAll('.hero-welcome, .hero-name, .hero-tagline, .hero-typing, .hero-buttons, .hero-image, .scroll-arrow').forEach(el => {
+                if (el instanceof HTMLElement) el.style.opacity = '1';
+            });
+            return;
+        }
         // Hero section animations
         const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
         

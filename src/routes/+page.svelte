@@ -159,13 +159,13 @@
         </a>
     </div>
 
-    <div id="about-me" class="px-8 bg-gradient-to-b from-green-700 to-green-800 pt-14">
-        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-bold text-center text-white">Who I am</h2>
-        <h3 style="font-family: 'CustomCursive'" class="text-2xl italic text-center text-white">Excellence and Investment in others</h3>
+    <div id="about-me" class="px-4 md:px-8 bg-gradient-to-b from-green-700 to-green-800 pt-14">
+        <h2 style="font-family: 'CustomCursive'" class="text-4xl md:text-6xl font-bold text-center text-white">Who I am</h2>
+        <h3 style="font-family: 'CustomCursive'" class="text-lg md:text-2xl italic text-center text-white">Excellence and Investment in others</h3>
         
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-8 max-w-[150rem] mx-auto pb-8">
             <!-- First Row: Image Carousel Left, Text Right -->
-            <div class="flex items-center justify-center pl-8">
+            <div class="flex items-center justify-center px-0 md:pl-8">
                 <ImageCarousel images={carouselImages1} alt="Jeffrey Vandever photos" />
             </div>
             <div class="flex flex-col justify-center text-left xl:pr-8">
@@ -190,7 +190,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex items-center justify-center pr-8">
+            <div class="flex items-center justify-center px-0 md:pr-8">
                 <ImageCarousel images={carouselImages2} alt="Jeffrey Vandever with Genworth Financial" />
             </div>
         </div>
@@ -204,8 +204,8 @@
     <!-- Skills Modal -->
     <SkillsModal showModal={showSkillsModal} {skills} onClose={closeSkillsModal} />
     
-    <div id="experience" class="relative px-6 isolate pt-14 bg-gradient-to-b from-green-800 to-green-900 lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold text-center text-gray-100 experience-title">Experience</h2>
+    <div id="experience" class="relative px-4 md:px-6 isolate pt-14 bg-gradient-to-b from-green-800 to-green-900 lg:px-8">
+        <h2 style="font-family: 'CustomCursive'" class="text-4xl md:text-6xl font-semibold text-center text-gray-100 experience-title">Experience</h2>
         <ul class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-8 max-w-[150rem] mx-auto pb-14">
             {#if experience.length === 0}
             <li class="text-center text-gray-500 dark:text-gray-400">No experience listed yet.</li>
@@ -221,8 +221,8 @@
     <!-- Experience Modal -->
     <DetailModal showModal={showExperienceModal} selectedItem={selectedJob} type="experience" onClose={closeExperienceModal} />
 
-    <div id="projects" class="relative px-6 pb-20 isolate pt-14 bg-gradient-to-b from-green-900 to-gray-800 lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold text-center text-gray-100 projects-title">Projects</h2>
+    <div id="projects" class="relative px-4 md:px-6 pb-20 isolate pt-14 bg-gradient-to-b from-green-900 to-gray-800 lg:px-8">
+        <h2 style="font-family: 'CustomCursive'" class="text-4xl md:text-6xl font-semibold text-center text-gray-100 projects-title">Projects</h2>
         <ul class="grid grid-cols-1 xl:grid-cols-3 gap-5 mt-8 max-w-[150rem] mx-auto pb-14">
             {#if projects.length === 0}
             <li class="text-center text-gray-500 dark:text-gray-400">No projects listed yet.</li>
@@ -238,8 +238,8 @@
     <!-- Project Modal -->
     <DetailModal showModal={showProjectModal} selectedItem={selectedProject} type="project" onClose={closeProjectModal} />
 
-    <div id="education" class="relative px-6 py-20 isolate bg-gradient-to-b from-gray-800 to-gray-900 lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold text-center text-gray-100">Education</h2>
+    <div id="education" class="relative px-4 md:px-6 py-20 isolate bg-gradient-to-b from-gray-800 to-gray-900 lg:px-8">
+        <h2 style="font-family: 'CustomCursive'" class="text-4xl md:text-6xl font-semibold text-center text-gray-100">Education</h2>
         <div class="max-w-4xl mx-auto mt-12">
             {#each education as edu}
                 <div class="p-8 border border-gray-700 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md">
@@ -270,8 +270,8 @@
         </div>
     </div>
 
-    <div id="contact" class="relative px-6 py-20 bg-gray-900 isolate bg-gradient-to-b lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold text-center text-gray-100">Contact Me</h2>
+    <div id="contact" class="relative px-4 md:px-6 py-20 bg-gray-900 isolate bg-gradient-to-b lg:px-8">
+        <h2 style="font-family: 'CustomCursive'" class="text-4xl md:text-6xl font-semibold text-center text-gray-100">Contact Me</h2>
         <div class="max-w-2xl mx-auto mt-12">
             <form method="POST" action="https://formspree.io/f/xqakqokj" class="p-8 space-y-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md">
             <input type="hidden" name="_subject" value="Contact request from portfolio website" />

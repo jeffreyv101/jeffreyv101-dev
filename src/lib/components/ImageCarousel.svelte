@@ -8,6 +8,9 @@
     export let autoScrollInterval = 5000; // 5 seconds
     export let alt = "Carousel image";
 
+    // Detect mobile for performance optimizations
+    let isMobile = false;
+
     let currentIndex = 0;
     /**
      * @type {number | undefined}
@@ -30,8 +33,11 @@
     }
 
     onMount(() => {
+        isMobile = window.innerWidth < 768;
         if (images.length > 1) {
-            intervalId = setInterval(nextImage, autoScrollInterval);
+            // Slower auto-scroll on mobile to reduce resource usage
+            const interval = isMobile ? autoScrollInterval * 1.5 : autoScrollInterval;
+            intervalId = setInterval(nextImage, interval);
         }
     });
 

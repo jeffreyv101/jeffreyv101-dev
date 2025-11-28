@@ -6,6 +6,9 @@
     gsap.registerPlugin(ScrollTrigger);
 
     onMount(() => {
+        // Disable scroll animations on mobile for better performance
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) return;
         // Animate experience cards on scroll
         const experienceCards = document.querySelectorAll('.experience-card');
         experienceCards.forEach((card, index) => {

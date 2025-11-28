@@ -6,6 +6,9 @@
     gsap.registerPlugin(ScrollTrigger);
 
     onMount(() => {
+        // Disable scroll animations on mobile for better performance
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) return;
         // Animate project cards on scroll
         const projectCards = document.querySelectorAll('.project-card');
         projectCards.forEach((card, index) => {
