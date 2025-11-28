@@ -1,27 +1,35 @@
 <script>
-    import { onMount } from 'svelte';
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
-    import Header from '$lib/components/+Header.svelte';
-    import Footer from '$lib/components/+Footer.svelte';
-    import SkillsModal from '$lib/components/SkillsModal.svelte';
-    import SkillsShowcase from '$lib/components/SkillsShowcase.svelte';
-    import ExperienceCard from '$lib/components/ExperienceCard.svelte';
-    import ProjectCard from '$lib/components/ProjectCard.svelte';
-    import DetailModal from '$lib/components/DetailModal.svelte';
-    import ImageCarousel from '$lib/components/ImageCarousel.svelte';
-    import HeroAnimations from '$lib/components/HeroAnimations.svelte';
-    import ExperienceAnimations from '$lib/components/ExperienceAnimations.svelte';
-    import ProjectAnimations from '$lib/components/ProjectAnimations.svelte';
+    import {
+        Header,
+        Footer,
+        SkillsModal,
+        SkillsShowcase,
+        ExperienceCard,
+        ProjectCard,
+        DetailModal,
+        ImageCarousel,
+        HeroAnimations,
+        ExperienceAnimations,
+        ProjectAnimations,
+        experienceData,
+        skillsData,
+        projectsData,
+        educationData,
+        speechPic,
+        profilePic,
+        genworthCeo,
+        spiritBand,
+        spiritBand2,
+        spiritBand3,
+        marchingBand
+    } from '$lib';
 
-    // Pictures
-    import speechPic from '$lib/assets/about/speech.jpeg';
-    import profilePic from '$lib/assets/about/profile.jpg';
-    import genworthCeo from '$lib/assets/about/genworth-ceo.jpeg';
-    import spiritBand from '$lib/assets/about/spirit-band.jpeg';
-    import spiritBand2 from '$lib/assets/about/spirit-band2.jpeg';
-    import spiritBand3 from '$lib/assets/about/spirit-band3.jpg';
-    import marchingBand from '$lib/assets/about/marching-band.jpeg';
+    const experience = experienceData;
+    const skills = skillsData; // SVG Icons for Skills courtesy of Tabler Icons
+    const projects = projectsData;
+    const education = educationData;
 
     // Carousel image arrays
     const carouselImages1 = [speechPic, spiritBand3];
@@ -29,16 +37,6 @@
 
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
-
-    // Import skills, experience, projects, and education data
-    import experienceData from '$lib/components/experience';
-    const experience = experienceData;
-    import skillsData from '$lib/components/skills.json';
-    const skills = skillsData; // SVG Icons for Skills courtesy of Tabler Icons
-    import projectsData from '$lib/components/projects.js';
-    const projects = projectsData;
-    import educationData from '$lib/components/education.json';
-    const education = educationData;
 
     // Flatten all skills into one array
     const allSkills = skills.flatMap(category => category.skills);
@@ -130,7 +128,7 @@
 
 <main>
     <Header />
-    <div id="hero" class="flex flex-col items-center justify-center px-4 text-center lg:tracking-tighter h-fit md:min-h-screen bg-gradient-to-b from-blue-900 to-green-900">
+    <div id="hero" class="flex flex-col items-center justify-center px-4 text-center h-fit md:min-h-screen bg-gradient-to-b from-blue-900 to-green-900">
         <div class="flex flex-col items-center justify-center w-full gap-8 mt-32 mb-5 xl:flex-row xl:gap-12 max-w-7xl">
             <div class="xl:text-left">
                 <h2 style="font-family: 'CustomCursive'" class="text-white opacity-0 md:text-2xl hero-welcome">Welcome! I'm </h2>
@@ -207,7 +205,7 @@
     <SkillsModal showModal={showSkillsModal} {skills} onClose={closeSkillsModal} />
     
     <div id="experience" class="relative px-6 isolate pt-14 bg-gradient-to-b from-green-800 to-green-900 lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold tracking-tight text-center text-gray-100 experience-title">Experience</h2>
+        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold text-center text-gray-100 experience-title">Experience</h2>
         <ul class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-8 max-w-[150rem] mx-auto pb-14">
             {#if experience.length === 0}
             <li class="text-center text-gray-500 dark:text-gray-400">No experience listed yet.</li>
@@ -224,7 +222,7 @@
     <DetailModal showModal={showExperienceModal} selectedItem={selectedJob} type="experience" onClose={closeExperienceModal} />
 
     <div id="projects" class="relative px-6 pb-20 isolate pt-14 bg-gradient-to-b from-green-900 to-gray-800 lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold tracking-tight text-center text-gray-100 projects-title">Projects</h2>
+        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold text-center text-gray-100 projects-title">Projects</h2>
         <ul class="grid grid-cols-1 xl:grid-cols-3 gap-5 mt-8 max-w-[150rem] mx-auto pb-14">
             {#if projects.length === 0}
             <li class="text-center text-gray-500 dark:text-gray-400">No projects listed yet.</li>
@@ -241,7 +239,7 @@
     <DetailModal showModal={showProjectModal} selectedItem={selectedProject} type="project" onClose={closeProjectModal} />
 
     <div id="education" class="relative px-6 py-20 isolate bg-gradient-to-b from-gray-800 to-gray-900 lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold tracking-tight text-center text-gray-100">Education</h2>
+        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold text-center text-gray-100">Education</h2>
         <div class="max-w-4xl mx-auto mt-12">
             {#each education as edu}
                 <div class="p-8 border border-gray-700 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md">
@@ -273,7 +271,7 @@
     </div>
 
     <div id="contact" class="relative px-6 py-20 bg-gray-900 isolate bg-gradient-to-b lg:px-8">
-        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold tracking-tight text-center text-gray-100">Contact Me</h2>
+        <h2 style="font-family: 'CustomCursive'" class="text-6xl font-semibold text-center text-gray-100">Contact Me</h2>
         <div class="max-w-2xl mx-auto mt-12">
             <form method="POST" action="https://formspree.io/f/xqakqokj" class="p-8 space-y-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800/50 backdrop-blur-md">
             <input type="hidden" name="_subject" value="Contact request from portfolio website" />
