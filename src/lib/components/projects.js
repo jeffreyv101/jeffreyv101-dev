@@ -64,7 +64,7 @@ const projects = [
         ],
         "context": "",
         "description": [
-            "Built a generative AI chatbot for the TWR360 platform to help users find relevant content. Click the follow link to go to the TWR360 homepage where the chatbot widget will be located on the lower right corner:"
+            "Built a generative AI chatbot for the TWR360 platform to help users find relevant content. Click the link below to go to the TWR360 homepage where the chatbot widget will be located on the lower right corner:"
         ],
         "link": "https://twr360.org"
     },
