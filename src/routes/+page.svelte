@@ -109,7 +109,7 @@
     // If Input is empty, clear out SECTION displaying typed text
     $: if (!currentPhrase) {
       typedChar = "";
-      index = typedChar.length;
+      index = 0;
     }
     
     // Disable START button; prevent clicking twice 
