@@ -99,22 +99,47 @@
     }
 
     // Typing Animation
-    let phrase = ["Incoming IT Analyst at Genworth Financial"];
+    let phrases = [" Software Engineer.", " Data Engineer.", " Web Developer.", " DevOps Engineer.", " Musician.", " Sax Player.", " UI/UX Designer."];
+    let phraseIndex = 0;
+    let currentPhrase = phrases[phraseIndex]; // text to be typed
     let typedChar = ""; // SECTION displaying typed text
     let index = 0; 
     let typewriter = 0; // for setInterval/clearInterval
+    
+    // If Input is empty, clear out SECTION displaying typed text
+    $: if (!currentPhrase) {
+      typedChar = "";
+      index = 0;
+    }
+    
     // Disable START button; prevent clicking twice 
     let isTyping = false;
     
     const typeChar = () => {
-      if (index < phrase[0].length) {
+      if (index < currentPhrase.length) {
         isTyping = true;
-        typedChar += phrase[0][index];
+        typedChar += currentPhrase[index];
         index += 1;
       } else {
         stopTyping();
+        setTimeout(backspaceChar, 1000); // Start backspacing after a delay
         return;
       }
+    }
+    
+    const backspaceChar = () => {
+      if (typedChar.length > 0) {
+        typedChar = typedChar.slice(0, -1);
+        index -= 1;
+      } else {
+        stopTyping();
+        // Change to next phrase
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        currentPhrase = phrases[phraseIndex];
+        setTimeout(typing, 1000); // Start typing again after a delay
+        return;
+      }
+      setTimeout(backspaceChar, 50); // Continue backspacing
     }
 
     const typing = () => typewriter = setInterval(typeChar, 100);
