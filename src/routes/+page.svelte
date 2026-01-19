@@ -98,57 +98,7 @@
         document.body.style.overflow = 'auto';
     }
 
-    // Typing Animation
-    let phrases = [" Software Engineer.", " Data Engineer.", " Web Developer.", " DevOps Engineer.", " Musician.", " Sax Player.", " UI/UX Designer."];
-    let phraseIndex = 0;
-    let currentPhrase = phrases[phraseIndex]; // text to be typed
-    let typedChar = ""; // SECTION displaying typed text
-    let index = 0; 
-    let typewriter = 0; // for setInterval/clearInterval
-    
-    // If Input is empty, clear out SECTION displaying typed text
-    $: if (!currentPhrase) {
-      typedChar = "";
-      index = 0;
-    }
-    
-    // Disable START button; prevent clicking twice 
-    let isTyping = false;
-    
-    const typeChar = () => {
-      if (index < currentPhrase.length) {
-        isTyping = true;
-        typedChar += currentPhrase[index];
-        index += 1;
-      } else {
-        stopTyping();
-        setTimeout(backspaceChar, 1000); // Start backspacing after a delay
-        return;
-      }
-    }
-    
-    const backspaceChar = () => {
-      if (typedChar.length > 0) {
-        typedChar = typedChar.slice(0, -1);
-        index -= 1;
-      } else {
-        stopTyping();
-        // Change to next phrase
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        currentPhrase = phrases[phraseIndex];
-        setTimeout(typing, 1000); // Start typing again after a delay
-        return;
-      }
-      setTimeout(backspaceChar, 50); // Continue backspacing
-    }
 
-    const typing = () => typewriter = setInterval(typeChar, 100);
-    
-    const stopTyping = () => {
-      clearInterval(typewriter);
-      isTyping = false;
-    }
-    typing();
 </script>
 
 <main>
@@ -157,10 +107,10 @@
         <div class="flex flex-col items-center justify-center w-full gap-8 mt-32 mb-5 xl:flex-row xl:gap-12 max-w-7xl">
             <div class="xl:text-left">
                 <h2 style="font-family: 'CustomCursive'" class="text-white opacity-0 md:text-2xl hero-welcome">Welcome! I'm </h2>
-                <h2 style="font-family: 'CustomCursive'" class="text-5xl font-extrabold text-white opacity-0 hero-name sm:text-6xl lg:text-8xl">Jeffrey Vandever</h2>
+                <h2 style="font-family: 'CustomCursive'" class="text-5xl text-white opacity-0 hero-name sm:text-6xl lg:text-8xl">Jeffrey Vandever</h2>
                 <h3 class="pt-2 text-xl italic text-white opacity-0 hero-tagline xl:pt-4">Building Technology that Empowers People.</h3>
-                <p class="italic font-bold text-blue-100 opacity-0 hero-typing text-md dark:text-green-200">
-                → {typedChar}
+                <p class="italic font-bold text-blue-100 opacity-0 hero-subtitle text-md dark:text-green-200">
+                → Incoming IT Analyst at Genworth Financial
                 </p>
                 <div class="flex items-center justify-center gap-6 opacity-0 hero-buttons xl:justify-start">
                     <a

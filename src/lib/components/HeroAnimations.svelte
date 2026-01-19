@@ -7,7 +7,7 @@
         const isMobile = window.innerWidth < 768;
         if (isMobile) {
             // Set opacity to 1 for all elements on mobile
-            document.querySelectorAll('.hero-welcome, .hero-name, .hero-tagline, .hero-typing, .hero-buttons, .hero-image, .scroll-arrow').forEach(el => {
+            document.querySelectorAll('.hero-welcome, .hero-name, .hero-tagline, .hero-subtitle, .hero-buttons, .hero-image, .scroll-arrow').forEach(el => {
                 if (el instanceof HTMLElement) el.style.opacity = '1';
             });
             return;
@@ -33,8 +33,8 @@
                 { opacity: 1, x: 0, duration: 0.8 },
                 '-=0.6'
             )
-            // Animate typing text container
-            .fromTo('.hero-typing',
+            // Animate subtitle text
+            .fromTo('.hero-subtitle',
                 { opacity: 0, y: 20 },
                 { opacity: 1, y: 0, duration: 0.6 },
                 '-=0.4'
