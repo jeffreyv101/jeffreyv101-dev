@@ -19,7 +19,6 @@
       <!-- Header Link Styling for Desktop Screens -->
       <div class="hidden lg:flex lg:gap-x-12">
         <a href="/" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Home</a>
-        <a href="#skills" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Skills</a>
         <a href="#experience" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Experience</a>
         <a href="#projects" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Projects</a>
         <a href="#contact" class="text-sm/6 font-semibold text-gray-400 hover:text-white">Contact Me</a>
@@ -48,7 +47,6 @@
           <div class="-my-6 divide-y divide-gray-400/10 dark:divide-gray-400">
             <div class="space-y-2 py-6">
               <a href="/" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-50 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800">Home</a>
-              <a href="#skills" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-50 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800">Skills</a>
               <a href="#experience" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:bg-gray-50 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800">Experience</a> 
               <a href="#projects" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:text-black hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800">Projects</a>
               <a href="#contact" on:click={() => {toggleMenu();}} class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-300 hover:text-black hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800">Contact Me</a>
