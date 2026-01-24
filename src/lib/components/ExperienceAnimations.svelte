@@ -3,9 +3,9 @@
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-    gsap.registerPlugin(ScrollTrigger);
-
     onMount(() => {
+        // Register GSAP plugin in browser only
+        gsap.registerPlugin(ScrollTrigger);
         // Disable scroll animations on mobile for better performance
         const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
         if (isMobile) return;

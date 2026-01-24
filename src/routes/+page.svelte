@@ -36,8 +36,10 @@
     const carouselImages1 = [speechPic, spiritBand3];
     const carouselImages2 = [genworthCeo, spiritBand, spiritBand2, marchingBand];
 
-    // Register GSAP plugins
-    gsap.registerPlugin(ScrollTrigger);
+    // Register GSAP plugins only in browser
+    if (browser) {
+        gsap.registerPlugin(ScrollTrigger);
+    }
 
     // Flatten all skills into one array
     const allSkills = skills.flatMap(category => category.skills);
