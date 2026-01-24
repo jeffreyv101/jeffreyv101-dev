@@ -7,9 +7,10 @@
 
     onMount(() => {
         // Disable scroll animations on mobile for better performance
-        const isMobile = window.innerWidth < 768;
+        const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
         if (isMobile) return;
         // Animate project cards on scroll
+        if (typeof document === 'undefined') return;
         const projectCards = document.querySelectorAll('.project-card');
         projectCards.forEach((card, index) => {
             gsap.fromTo(card,

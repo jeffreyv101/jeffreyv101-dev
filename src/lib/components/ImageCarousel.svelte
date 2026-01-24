@@ -33,7 +33,7 @@
     }
 
     onMount(() => {
-        isMobile = window.innerWidth < 768;
+        isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
         if (images.length > 1) {
             // Slower auto-scroll on mobile to reduce resource usage
             const interval = isMobile ? autoScrollInterval * 1.5 : autoScrollInterval;

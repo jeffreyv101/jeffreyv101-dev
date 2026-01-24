@@ -7,9 +7,10 @@
 
     onMount(() => {
         // Disable scroll animations on mobile for better performance
-        const isMobile = window.innerWidth < 768;
+        const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
         if (isMobile) return;
         // Animate experience cards on scroll
+        if (typeof document === 'undefined') return;
         const experienceCards = document.querySelectorAll('.experience-card');
         experienceCards.forEach((card, index) => {
             gsap.fromTo(card,

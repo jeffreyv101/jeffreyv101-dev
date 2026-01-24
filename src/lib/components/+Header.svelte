@@ -87,6 +87,7 @@
   import { onMount } from 'svelte';
 
   function toggleMenu() {
+    if (typeof document === 'undefined') return;
     const burgerIcon = document.getElementById('burger-icon');
     const mobileMenu = document.querySelector('[role="dialog"]');
     if (burgerIcon && mobileMenu) {
@@ -103,6 +104,7 @@
   };
 
   onMount(() => {
+    if (typeof document === 'undefined') return;
     const burgerIcon = document.getElementById('burger-icon');
     const mobileMenu = document.querySelector('[role="dialog"]');
     

@@ -34,6 +34,7 @@
 
     // GSAP Animation
     onMount(() => {
+        if (typeof document === 'undefined') return;
         const track = document.querySelector('.skills-track');
         if (track) {
             // Duplicate skills for seamless loop

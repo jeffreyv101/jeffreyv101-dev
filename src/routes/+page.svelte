@@ -1,4 +1,5 @@
 <script>
+    import { browser } from '$app/environment';
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import {
@@ -54,13 +55,13 @@
     function openExperienceModal(job) {
         selectedJob = job;
         showExperienceModal = true;
-        document.body.style.overflow = 'hidden';
+        if (browser) document.body.style.overflow = 'hidden';
     }
 
     function closeExperienceModal() {
         showExperienceModal = false;
         selectedJob = null;
-        document.body.style.overflow = 'auto';
+        if (browser) document.body.style.overflow = 'auto';
     }
 
     // Skills Modal state
@@ -68,12 +69,12 @@
 
     function openSkillsModal() {
         showSkillsModal = true;
-        document.body.style.overflow = 'hidden';
+        if (browser) document.body.style.overflow = 'hidden';
     }
 
     function closeSkillsModal() {
         showSkillsModal = false;
-        document.body.style.overflow = 'auto';
+        if (browser) document.body.style.overflow = 'auto';
     }
 
     // Project Modal state
@@ -89,13 +90,13 @@
     function openProjectModal(project) {
         selectedProject = project;
         showProjectModal = true;
-        document.body.style.overflow = 'hidden';
+        if (browser) document.body.style.overflow = 'hidden';
     }
 
     function closeProjectModal() {
         showProjectModal = false;
         selectedProject = null;
-        document.body.style.overflow = 'auto';
+        if (browser) document.body.style.overflow = 'auto';
     }
 
 
