@@ -12,25 +12,6 @@ import missionizeLogo from '$lib/assets/projects/missionize-logo.png'
 // Project List
 const projects = [
     {
-        "title": "Py in a Box",
-        "image": pyinaboxLogo,
-        "demo-image": pythonRunner,
-        "company": "CloudFit Software",
-        "location": "Lynchburg, VA",
-        "date": "August 2025 - May 2026",
-        "highlights": [
-            "Workflow Engine Extension",
-            "Multi-Language Script Support",
-            "Sandboxed Execution Environment"
-        ],
-        "skills": ["Kubernetes", "Python", "PowerShell", "Docker"],
-        "context": "CloudFit workflow users cannot take full advantage of the workflow engine due to limited language support.",
-        "description": [
-            "As part of a capstone project with CloudFit Software, extended the organization's workflow engine to execute Python and PowerShell scripts within a sandboxed environment using Docker containers orchestrated by Kubernetes. Developed a user-friendly interface for script submission and result retrieval, enhancing the platform's versatility and user experience."
-        ],
-        "link": "NA"
-    },
-    {
         "title": "Software Development Club Website",
         "image": sdcLogo,
         "demo-image": sdcDemo,
