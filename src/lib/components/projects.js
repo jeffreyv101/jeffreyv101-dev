@@ -50,6 +50,43 @@ const projects = [
         "link": "https://twr360.org"
     },
     {
+        "title": "Python Script Workflow Execution Environment",
+        "image": pyinaboxLogo,
+        "demo-image": pythonRunner,
+        "company": "CloudFit Software",
+        "location": "Lynchburg, VA",
+        "date": "August 2025 - May 2026",
+        "highlights": [
+            "Workflow Engine Extension",
+            "Multi-Language Script Support",
+            "Sandboxed Execution Environment"
+        ],
+        "skills": ["C#", "Kubernetes", "Python", "PowerShell", "Docker"],
+        "description": [
+            "As part of a capstone project with CloudFit Software, extended the organization's workflow engine to execute Python and PowerShell scripts within a sandboxed environment using Docker containers orchestrated by Kubernetes. Developed a user-friendly interface for script submission and result retrieval, enhancing the platform's versatility and user experience."
+        ],
+        "link": "NA"
+    },
+    {
+        "title": "Liberty University Facilities Planning & Management Website",
+        "image": "",
+        "demo-image": "",
+        "company": "Liberty University",
+        "location": "Lynchburg, VA",
+        "date": "April 2025 - May 2025 & September 2026 - May 2026",
+        "skills": ["WordPress", "HTML", "CSS"],
+        "highlights": [
+            "Facilities Information Hub",
+            "Planning & Management Tools",
+            "Resource Repository"
+        ],
+        "context": "",
+        "description": [
+            "Redesigned and launched a unified departmental site for 5+ formerly separate departments, boosting page views by 30% and engagement by 25% while ensuring brand consistency and improving navigation across the Liberty.edu domain. Architected an enterprise marketplace for facilities asset surplus for the university community and the public."
+        ],
+        "link": "https://www.liberty.edu/facilities-management/"
+    },
+    {
         "title": "TWR360 RSS.com Podcast Delivery System",
         "skills": ["AWS EC2", "Python"],
         "image": twr360,

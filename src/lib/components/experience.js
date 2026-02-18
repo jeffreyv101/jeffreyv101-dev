@@ -8,7 +8,7 @@ let experience = [
         "image": genworth,
         "company": "Genworth Financial",
         "location": "Richmond, VA",
-        "date": "July 2026 - Present",
+        "date": "July 2026",
         "skills": ["TBD"],
         "highlights": [
             "Exploring automation, cloud, and AI within a 2-year rotational leadership program."
@@ -20,18 +20,18 @@ let experience = [
     {
         "title": "Software Analyst",
         "image": liberty,
-        "company": "Liberty University - Transportation",
+        "company": "Liberty University - Transit & Facilities",
         "location": "Lynchburg, VA",
         "date": "Aug 2025 - May 2026",
-        "skills": ["Python", "Automation", "Data Analysis"],
+        "skills": ["Python", "LLMs", "Machine Learning"],
         "highlights": [
             "Automation Scripting",
-            "Data Analysis",
+            "Machine Learning Integration",
             "Process Improvement"
         ],
         "description": [
            "Conducted a full audit of Liberty University's asset tracking system, verifying and correcting thousands of vehicle/trailer related assets to ensure data accuracy and integrity.",
-           "Developed Python automation scripts to reduce audit time from 10 minutes to ~2 minutes, reducing project completion time from 12 months to 3 months."
+           "Automated the audit process using fine-tuned LLMs, reducing audit time from 10 minutes to ~2 minutes, and reducing project completion time from 12 months to 3 months."
         ]
     },
     {
@@ -55,7 +55,7 @@ let experience = [
     {
         "title": "Web Design Assistant",
         "image": liberty,
-        "company": "Liberty University - Facilities Planning and Construction",
+        "company": "Liberty University - Facilities Planning and Management",
         "location": "Lynchburg, VA",
         "date": "Apr 2025 - May 2025",
         "skills": ["Web Design", "UI/UX", "Collaboration"],
