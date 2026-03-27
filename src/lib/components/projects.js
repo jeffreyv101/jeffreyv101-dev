@@ -7,6 +7,10 @@ import sdcDemo from '$lib/assets/projects/demos/sdc-website.png'
 import twr360 from '$lib/assets/experience/twr360.png'
 import twr360Demo from '$lib/assets/projects/demos/twr360-chatbot.png'
 
+import mergedDemo from '$lib/assets/projects/demos/merged.png'
+import fpmWebsite from '$lib/assets/projects/demos/fpm-website.png'
+import weatherApp from '$lib/assets/projects/demos/weather-app.png'
+
 import missionizeLogo from '$lib/assets/projects/missionize-logo.png'
 
 // Project List
@@ -68,12 +72,31 @@ const projects = [
         "link": "NA"
     },
     {
+        "title": "Merged: Social Media for Developers",
+        "image": "",
+        "demo-image": mergedDemo,
+        "company": "Portfolio Project",
+        "location": "Lynchburg, VA",
+        "date": "March 2026 - May 2026",
+        "skills": ["React Native", "fastAPI", "mongoDB"],
+        "highlights": [
+            "Developer-Centric Social Platform",
+            "Project Sharing and Networking",
+            "Tinder-Like Swipe Interface"
+        ],
+        "context": "As part of CSCN 408, a mini-capstone course, our team was tasked with developing a large-scale application to solve a problem of our choice. We chose to develop a social media platform for developers to share their projects and connect with other developers.",
+        "description": [
+            "Merged is a social media platform for developers to share their projects and connect with other developers. The platform allows users to create profiles, post updates about their projects, and follow/connect with other developers. The platform also features a tinder-like swipe interface to connect with other developers based on shared interests and project types. This emphasizes collaboration and networking within the developer community, fostering connections based on shared passions and project synergies."
+        ],
+        "link": "NA"
+    },
+    {
         "title": "Liberty University Facilities Planning & Management Website",
         "image": "",
-        "demo-image": "",
+        "demo-image": fpmWebsite,
         "company": "Liberty University",
         "location": "Lynchburg, VA",
-        "date": "April 2025 - May 2025 & September 2026 - May 2026",
+        "date": "April 2025 - May 2025 & September 2025 - May 2026",
         "skills": ["WordPress", "HTML", "CSS"],
         "highlights": [
             "Facilities Information Hub",
@@ -85,6 +108,25 @@ const projects = [
             "Redesigned and launched a unified departmental site for 5+ formerly separate departments, boosting page views by 30% and engagement by 25% while ensuring brand consistency and improving navigation across the Liberty.edu domain. Architected an enterprise marketplace for facilities asset surplus for the university community and the public."
         ],
         "link": "https://www.liberty.edu/facilities-management/"
+    },
+    {
+        "title": "Weather Dashboard Application",
+        "image": "",
+        "demo-image": weatherApp,
+        "company": "Personal Project",
+        "location": "N/A",
+        "date": "February 2026 - March 2026",
+        "skills": ["Next.js", "Tailwind CSS", "TypeScript", "RapidAPI"],
+        "highlights": [
+            "Real-Time Weather Data",
+            "Interactive Dashboard",
+            "API Integration"
+        ],
+        "context": "",
+        "description": [
+            "Developed a weather dashboard application that provides real-time weather data and forecasts for any location using the OpenWeatherMap API. The application features an interactive dashboard with dynamic visualizations and user-friendly navigation."
+        ],
+        "link": "https://github.com/jeffreyv101/weather-app"
     },
     {
         "title": "TWR360 RSS.com Podcast Delivery System",
@@ -104,22 +146,6 @@ const projects = [
             "Led the development of a JSON feed to XML feed converter to develop a robust podcast delivery system for internal use for the TWR360 platform in a club team of 10 members using V-shaped methodology."
         ],
         "link": "NA"
-    },
-    {
-        "title": "Discipler",
-        "image": missionizeLogo,
-        "demo-image": "",
-        "highlights": [
-            "AI-Driven Personal Development Platform",
-            "Custom Growth Plans",
-            "Gamified Engagement"
-        ],
-        "skills": ["React Native", "fastAPI", "MongoDB", "GPT-4"],
-        "context": "",
-        "description": [
-            "Leading the technical development of Discipler, an AI-driven personal development platform designed to deliver daily, customized growth plans for individuals, groups, and communities. Leveraging GPT-4 and modern web technologies, the platform generates dynamic content, tracks user habits, and fosters engagement through gamified features and group analytics."
-        ],
-        "link": "WIP"
     },
     {
         "title": "Family Financial Literacy Application",

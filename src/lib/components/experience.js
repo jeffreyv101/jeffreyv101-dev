@@ -4,23 +4,9 @@ import genworth from '$lib/assets/experience/genworth.png'
 
 let experience = [
     {
-        "title": "IT Development Program Analyst",
-        "image": genworth,
-        "company": "Genworth Financial",
-        "location": "Richmond, VA",
-        "date": "July 2026",
-        "skills": ["TBD"],
-        "highlights": [
-            "Exploring automation, cloud, and AI within a 2-year rotational leadership program."
-        ],
-        "description": [
-            "Selected for Genworth Financial's prestigious IT Development Program, a competitive 2-year rotational leadership initiative designed to cultivate future technology leaders within the organization. The program offers immersive experiences across various IT domains, including automation, cloud computing, and artificial intelligence, providing a comprehensive understanding of Genworth's technological landscape and strategic objectives."
-        ]
-    },
-    {
         "title": "Software Analyst",
         "image": liberty,
-        "company": "Liberty University - Transit & Facilities",
+        "company": "Liberty University - Transportation & Facilities",
         "location": "Lynchburg, VA",
         "date": "Aug 2025 - May 2026",
         "skills": ["Python", "LLMs", "Machine Learning"],

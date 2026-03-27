@@ -112,9 +112,6 @@
                 <h2 style="font-family: 'CustomCursive'" class="text-white opacity-0 md:text-2xl hero-welcome">Welcome! I'm </h2>
                 <h2 style="font-family: 'CustomCursive'" class="text-5xl text-white opacity-0 hero-name sm:text-6xl lg:text-8xl">Jeffrey Vandever</h2>
                 <h3 class="pt-2 text-xl italic text-white opacity-0 hero-tagline xl:pt-4">Building Technology that Empowers People.</h3>
-                <p class="italic font-bold text-blue-100 opacity-0 hero-subtitle text-md dark:text-green-200">
-                → Incoming IT Analyst at Genworth Financial
-                </p>
                 <div class="flex items-center justify-center gap-6 opacity-0 hero-buttons xl:justify-start">
                     <a
                         href="#experience"
