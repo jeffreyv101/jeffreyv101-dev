@@ -149,7 +149,7 @@
                         I'm someone who believes that excellence isn't about perfection — it's about <span class="font-bold text-green-300">consistency, curiosity, and care for others.</span>
                     </p>
                     <p class="text-lg leading-relaxed text-gray-200">
-                        My drive as a technologist comes from a desire to build solutions that make people's work, learning, and communication easier and more meaningful. Whether I'm developing software, leading a team, or mentoring peers, I aim to set a high standard not only in the quality of my work but in how I treat the people I work with.
+                        My drive as a developer and service engineer comes from a desire to build solutions that make people's work, learning, and communication easier and more meaningful. Whether I'm developing software, leading a team, or mentoring peers, I aim to set a high standard not only in the quality of my work but in how I treat the people I work with.
                     </p>
                 </div>
             </div>

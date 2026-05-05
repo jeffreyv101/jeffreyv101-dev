@@ -1,8 +1,23 @@
 import twr360 from '$lib/assets/experience/twr360.png'
 import liberty from '$lib/assets/experience/liberty.png'
 import genworth from '$lib/assets/experience/genworth.png'
+import cloudfit from '$lib/assets/experience/cloudfit.jpeg'
 
 let experience = [
+    {
+        "title": "DevSecOps Service Engineer",
+        "image": cloudfit,
+        "company": "CloudFit Software",
+        "location": "Lynchburg, VA",
+        "date": "June 2026",
+        "skills": ["DevSecOps", "Docker", "Kubernetes", "CI/CD"],
+        "highlights": [
+            "DevSecOps Service Management"
+        ],
+        "description": [
+            "Upcoming role starting in June 2026. Will be responsible for managing and optimizing DevSecOps services for clients.",
+        ]
+    },
     {
         "title": "Software Analyst",
         "image": liberty,

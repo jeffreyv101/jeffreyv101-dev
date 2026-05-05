@@ -16,23 +16,23 @@ import missionizeLogo from '$lib/assets/projects/missionize-logo.png'
 // Project List
 const projects = [
     {
-        "title": "Software Development Club Website",
-        "image": sdcLogo,
-        "demo-image": sdcDemo,
-        "company": "Liberty University",
+        "title": "Merged: Social Media for Developers",
+        "image": "",
+        "demo-image": mergedDemo,
+        "company": "Portfolio Project",
         "location": "Lynchburg, VA",
-        "date": "July 2025 - September 2025",
-        "skills": ["React.js", "React Router", "Vite.js", "Tailwind CSS"],
+        "date": "March 2026 - May 2026",
+        "skills": ["React Native", "fastAPI", "mongoDB"],
         "highlights": [
-            "Club Information Hub",
-            "Event Announcements",
-            "Resource Repository"
+            "Developer-Centric Social Platform",
+            "Project Sharing and Networking",
+            "Tinder-Like Swipe Interface"
         ],
-        "context": "",
+        "context": "As part of CSCN 408, a mini-capstone course, our team was tasked with developing a large-scale application to solve a problem of our choice. We chose to develop a social media platform for developers to share their projects and connect with other developers.",
         "description": [
-            "Developed a website for the Liberty University Software Development Club to help students find resources and information about the club. The website includes information about upcoming events, club resources, and projects."
+            "Merged is a social media platform for developers to share their projects and connect with other developers. The platform allows users to create profiles, post updates about their projects, and follow/connect with other developers. The platform also features a tinder-like swipe interface to connect with other developers based on shared interests and project types. This emphasizes collaboration and networking within the developer community, fostering connections based on shared passions and project synergies."
         ],
-        "link": "https://lusdc.org"
+        "link": "https://github.com/jeffreyv101/Merged"
     },
     {
         "title": "TWR360 Generative AI Chatbot",
@@ -72,23 +72,23 @@ const projects = [
         "link": "NA"
     },
     {
-        "title": "Merged: Social Media for Developers",
-        "image": "",
-        "demo-image": mergedDemo,
-        "company": "Portfolio Project",
+        "title": "Software Development Club Website",
+        "image": sdcLogo,
+        "demo-image": sdcDemo,
+        "company": "Liberty University",
         "location": "Lynchburg, VA",
-        "date": "March 2026 - May 2026",
-        "skills": ["React Native", "fastAPI", "mongoDB"],
+        "date": "July 2025 - September 2025",
+        "skills": ["React.js", "React Router", "Vite.js", "Tailwind CSS"],
         "highlights": [
-            "Developer-Centric Social Platform",
-            "Project Sharing and Networking",
-            "Tinder-Like Swipe Interface"
+            "Club Information Hub",
+            "Event Announcements",
+            "Resource Repository"
         ],
-        "context": "As part of CSCN 408, a mini-capstone course, our team was tasked with developing a large-scale application to solve a problem of our choice. We chose to develop a social media platform for developers to share their projects and connect with other developers.",
+        "context": "",
         "description": [
-            "Merged is a social media platform for developers to share their projects and connect with other developers. The platform allows users to create profiles, post updates about their projects, and follow/connect with other developers. The platform also features a tinder-like swipe interface to connect with other developers based on shared interests and project types. This emphasizes collaboration and networking within the developer community, fostering connections based on shared passions and project synergies."
+            "Developed a website for the Liberty University Software Development Club to help students find resources and information about the club. The website includes information about upcoming events, club resources, and projects."
         ],
-        "link": "NA"
+        "link": "https://lusdc.org"
     },
     {
         "title": "Liberty University Facilities Planning & Management Website",
@@ -169,7 +169,6 @@ const projects = [
         "demo-image": "",
         "skills": ["Java", "Maven", "Spring", "Kafka", "SQL", "REST API"],
         "highlights": [
-            "Virtual Experience Program Completion",
             "Stock Price Data Feed Application",
             "JPMorgan Chase & Co Frameworks"
         ],
