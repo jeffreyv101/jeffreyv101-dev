@@ -3,24 +3,24 @@
     export let onClick;
 </script>
 
-<button 
+<button
     on:click={() => onClick(job)}
-    class="experience-card w-full bg-gray-800/50 backdrop-blur-md p-6 rounded-lg shadow-md border border-gray-700 hover:bg-gray-700/60 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300 cursor-pointer text-left"
+    class="experience-card w-full bg-[#1a1a1a] p-6 rounded-xl shadow-md border border-[#2a2a2a] hover:bg-[#1f1f1f] hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer text-left"
 >
-    <div class="md:flex md:justify-between">
+    <div class="md:flex md:justify-between md:items-start">
         <div>
-            <h2 class="text-2xl font-semibold text-white">{job.title}</h2>
-            <h2 class="text-lg text-gray-300">{job.company}</h2>
+            <h2 class="text-xl font-semibold text-white">{job.title}</h2>
+            <h2 class="text-base text-gray-400 mt-0.5">{job.company}</h2>
         </div>
-        <div class="flex justify-between md:block md:justify-normal">
-            <h2 class="italic font-bold pb-2.5 text-gray-200">{job.location}</h2>
-            <h3 class="italic text-gray-200">{job.date}</h3>
+        <div class="flex justify-between md:block md:justify-normal mt-2 md:mt-0 md:text-right">
+            <h2 class="text-sm font-medium text-gray-300">{job.location}</h2>
+            <h3 class="text-sm text-gray-500 mt-0.5">{job.date}</h3>
         </div>
     </div>
-    <div class="flex flex-wrap items-center gap-2">
+    <div class="flex flex-wrap items-center gap-2 mt-4">
         {#each job.highlights as highlight}
-            <span class="text-green-300 text-sm font-medium mt-3">• {highlight}</span>
+            <span class="text-blue-300 text-sm font-medium">• {highlight}</span>
         {/each}
     </div>
-    <p class="text-green-400 text-sm mt-4 font-medium">Click to view details →</p>
+    <p class="text-blue-400 text-sm mt-4 font-medium">Click to view details →</p>
 </button>

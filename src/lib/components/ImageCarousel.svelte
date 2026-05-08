@@ -50,12 +50,12 @@
 
 <div class="relative w-full overflow-hidden rounded-lg shadow-lg group">
     <!-- Images -->
-    <div class="relative max-h-96">
+    <div class="relative w-full aspect-[16/9]">
         {#each images as image, index}
-            <img 
-                src={image} 
+            <img
+                src={image}
                 alt={`${alt} ${index + 1}`}
-                class="object-cover w-full transition-opacity duration-500 max-h-96 {index === currentIndex ? 'opacity-100' : 'opacity-0 absolute inset-0'}"
+                class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 {index === currentIndex ? 'opacity-100' : 'opacity-0'}"
             />
         {/each}
     </div>
