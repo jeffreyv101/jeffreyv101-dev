@@ -39,7 +39,7 @@
         gsap.registerPlugin(ScrollTrigger);
     }
 
-    const allSkills = skills.flatMap(category => category.skills);
+    const allSkills = skills.flatMap((/** @type {{ skills: any; }} */ category) => category.skills);
 
     /**
      * @type {typeof experience[0] | null | undefined}

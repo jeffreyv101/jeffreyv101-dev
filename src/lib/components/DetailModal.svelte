@@ -21,30 +21,6 @@
             onClose();
         }
     }
-
-    $: colors = type === 'experience' ? {
-        border: 'border-blue-500/30',
-        headerGradient: 'from-blue-900 to-[#1a1a2e]',
-        headerBorder: 'border-blue-500/20',
-        skillsBg: 'bg-blue-500/15',
-        skillsText: 'text-blue-300',
-        skillsBorder: 'border-blue-500/20',
-        skillsTitle: 'text-blue-400',
-        highlightsTitle: 'text-blue-300',
-        highlightsIcon: 'text-blue-400',
-        button: 'bg-blue-600 hover:bg-blue-700'
-    } : {
-        border: 'border-blue-500/30',
-        headerGradient: 'from-[#1a1a2e] to-[#1a1030]',
-        headerBorder: 'border-blue-500/20',
-        skillsBg: 'bg-blue-500/15',
-        skillsText: 'text-blue-300',
-        skillsBorder: 'border-blue-500/20',
-        skillsTitle: 'text-blue-400',
-        highlightsTitle: 'text-blue-300',
-        highlightsIcon: 'text-blue-400',
-        button: 'bg-blue-600 hover:bg-blue-700'
-    };
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
@@ -59,34 +35,34 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div
-        class="bg-[#161616] rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border-2 {colors.border} m-2 md:m-0"
+        class="bg-[#161616] rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-[#2a2a2a] m-2 md:m-0"
         on:click={(e) => e.stopPropagation()}
     >
         <!-- Modal Header -->
-        <div class="sticky top-0 bg-gradient-to-r {colors.headerGradient} rounded-t-2xl border-b {colors.headerBorder}">
+        <div class="sticky top-0 bg-[#1a1a1a] rounded-t-2xl border-b border-[#2a2a2a]">
             <div class="flex items-start justify-between p-6">
                 <div>
-                    <h2 class="text-3xl font-bold text-white">{selectedItem.title}</h2>
+                    <h2 class="text-2xl font-black uppercase text-white">{selectedItem.title}</h2>
                     <div class="flex items-center gap-4 mt-2">
                         {#if selectedItem.image}
-                            <img src={selectedItem.image} alt="{type === 'experience' ? selectedItem.company : selectedItem.title} logo" class="h-12 mt-2 mb-1 rounded-md"/>
+                            <img src={selectedItem.image} alt="{type === 'experience' ? selectedItem.company : selectedItem.title} logo" class="h-10 mt-1 rounded-md"/>
                         {/if}
                         <div>
                             {#if selectedItem.company}
-                            <p class="mt-1 text-lg text-blue-200">{selectedItem.company}</p>
+                            <p class="text-base text-blue-300">{selectedItem.company}</p>
                             {/if}
                             {#if selectedItem.location || selectedItem.date}
-                            <p class="mt-1 text-sm text-gray-400">{selectedItem.location} • {selectedItem.date}</p>
+                            <p class="mt-0.5 text-sm text-gray-500 whitespace-nowrap">{selectedItem.location} • {selectedItem.date}</p>
                             {/if}
                         </div>
                     </div>
                 </div>
                 <button
                     on:click={onClose}
-                    class="p-2 text-gray-400 transition-all duration-200 rounded-full hover:text-white hover:bg-white/10"
+                    class="p-2 text-gray-500 transition-all duration-200 rounded-full hover:text-white hover:bg-white/10 flex-shrink-0 ml-4"
                     aria-label="Close modal"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
@@ -97,13 +73,12 @@
         <div class="p-6 space-y-6">
             <!-- Skills Section -->
             <div>
-                <h3 class="text-xl font-semibold {colors.skillsTitle} mb-3 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-widest mb-3">
                     {type === 'experience' ? 'Skills & Technologies' : 'Technologies Used'}
                 </h3>
                 <div class="flex flex-wrap gap-2">
                     {#each selectedItem.skills as skill}
-                        <span class="{colors.skillsBg} {colors.skillsText} px-4 py-2 rounded-full text-sm font-medium border {colors.skillsBorder}">
+                        <span class="bg-blue-500/10 text-blue-300 px-3 py-1 rounded-full text-xs font-medium border border-blue-500/20">
                             {skill}
                         </span>
                     {/each}
@@ -112,14 +87,13 @@
 
             <!-- Highlights Section -->
             <div>
-                <h3 class="text-xl font-semibold {colors.highlightsTitle} mb-3 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h1m8-9v1m8 8h1m-15.4-6.4.7.7m12.1-.7-.7.7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0-1 3a2 2 0 0 1-4 0a3.5 3.5 0 0 0-1-3"/><path d="M9.7 17h4.6"/></svg>
+                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-widest mb-3">
                     {type === 'experience' ? 'Key Highlights' : 'Key Features'}
                 </h3>
                 <ul class="space-y-2">
                     {#each selectedItem.highlights as highlight}
                         <li class="flex items-start gap-2 text-gray-300">
-                            <span class="{colors.highlightsIcon} mt-1">▸</span>
+                            <span class="text-blue-500 mt-1 flex-shrink-0">▸</span>
                             <span>{highlight}</span>
                         </li>
                     {/each}
@@ -128,8 +102,7 @@
 
             {#if type === 'project' && selectedItem.context}
             <div>
-                <h3 class="flex items-center gap-2 mb-3 text-xl font-semibold text-yellow-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9h.01"/><path d="M11 12h1v4h1"/><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9z"/></svg>
+                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-widest mb-3">
                     Problem Statement
                 </h3>
                 <p class="leading-relaxed text-gray-300">{selectedItem.context}</p>
@@ -138,8 +111,7 @@
 
             <!-- Description Section -->
             <div>
-                <h3 class="flex items-center gap-2 mb-3 text-xl font-semibold text-purple-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9h.01"/><path d="M11 12h1v4h1"/><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9z"/></svg>
+                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-widest mb-3">
                     {type === 'experience' ? 'Description' : 'Project Description'}
                 </h3>
                 <div class="space-y-3">
@@ -161,15 +133,14 @@
 
             {#if type === 'project' && selectedItem.link && selectedItem.link !== 'NA' && selectedItem.link !== 'WIP'}
             <div>
-                <h3 class="flex items-center gap-2 mb-3 text-xl font-semibold text-cyan-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l6-6"/><path d="M11 6l.463-.536a5 5 0 0 1 7.071 7.072l-.534.464"/><path d="M13 18l-.397.534a5.068 5.068 0 0 1-7.127 0 4.972 4.972 0 0 1 0-7.071l.524-.463"/></svg>
+                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-widest mb-3">
                     Project Link
                 </h3>
                 <a
                     href={selectedItem.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 underline transition-colors text-cyan-300 hover:text-cyan-200 underline-offset-4"
+                    class="inline-flex items-center gap-2 text-blue-300 hover:text-blue-200 underline underline-offset-4 transition-colors"
                 >
                     Visit Project
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
@@ -182,7 +153,7 @@
         <div class="sticky bottom-0 p-4 border-t border-[#2a2a2a] bg-[#161616] rounded-b-2xl">
             <button
                 on:click={onClose}
-                class="w-full {colors.button} text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
             >Close</button>
         </div>
     </div>
