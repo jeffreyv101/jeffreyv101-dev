@@ -179,7 +179,7 @@
                         <svg class="mb-4 text-white w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
                         </svg>
-                        <p class="text-xs font-bold leading-relaxed tracking-wide text-white uppercase">Gemini API, LLMs, Claude Code</p>
+                        <p class="text-xs font-bold leading-relaxed tracking-wide text-white uppercase">Gemini API, LLMs,<br>AI Agents</p>
                         <div class="flex justify-end mt-4">
                             <div class="bg-white/20 rounded-lg p-1.5">
                                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

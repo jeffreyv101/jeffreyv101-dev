@@ -22,7 +22,7 @@ const projects = [
         "company": "Portfolio Project",
         "location": "Lynchburg, VA",
         "date": "March 2026 - May 2026",
-        "skills": ["React Native", "fastAPI", "mongoDB"],
+        "skills": ["React Native", "Node.js", "Express.js", "SQLite"],
         "highlights": [
             "Developer-Centric Social Platform",
             "Project Sharing and Networking",
