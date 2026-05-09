@@ -100,23 +100,13 @@
     <Header />
 
     <!-- ─── Hero ─── -->
-    <section id="home" class="flex items-center min-h-screen px-6 pb-20 mx-auto pt-28 max-w-7xl">
+    <section id="home" class="flex items-center px-6 pb-20 mx-auto pt-28 max-w-7xl">
         <div class="grid items-center w-full grid-cols-1 gap-12 lg:grid-cols-2 xl:gap-20 lg:items-stretch">
 
             <!-- Left: Profile Card -->
             <div class="flex justify-center lg:justify-start lg:flex-col">
                 <div class="relative w-full max-w-sm opacity-0 hero-card lg:max-w-md lg:flex lg:flex-col lg:flex-1">
-                    <!-- Dashed arc decoration -->
-                    <svg class="absolute pointer-events-none -top-10 -right-10 w-44 h-44" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 168 12 C 175 85 110 162 35 170" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="9 6" fill="none" stroke-linecap="round"/>
-                    </svg>
-                    <!-- Blue accent badge -->
-                    <div class="absolute -left-5 top-[210px] w-11 h-11 bg-blue-500 rounded-full flex items-center justify-center shadow-xl shadow-blue-500/40 z-20">
-                        <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                        </svg>
-                    </div>
-                    <!-- White card -->
+                <!-- White card -->
                     <div class="p-6 text-center bg-white shadow-2xl rounded-3xl lg:flex lg:flex-col lg:flex-1">
                         <!-- Profile image with blue background -->
                         <div class="w-full overflow-hidden bg-blue-500 rounded-2xl h-60 lg:h-auto lg:flex-1">
@@ -127,7 +117,7 @@
                             />
                         </div>
                         <!-- Name -->
-                        <h1 class="mt-5 text-2xl font-bold text-gray-900">Jeffrey Vandever</h1>
+                        <h1 class="mt-5 text-3xl font-bold text-gray-900">Jeffrey Vandever</h1>
                         <!-- Tagline -->
                         <p class="px-4 mt-2 text-sm leading-relaxed text-gray-500">
                             A Software Engineer building full-stack applications and DevSecOps solutions.
@@ -172,7 +162,7 @@
                         <p class="mt-1 text-xs leading-tight tracking-wider text-gray-500 uppercase">Years of<br>Experience</p>
                     </div>
                     <div class="border-l border-[#2a2a2a] pl-8 pr-8 md:pl-12 md:pr-12">
-                        <p class="text-4xl font-black text-white md:text-5xl">+9</p>
+                        <p class="text-4xl font-black text-white md:text-5xl">+12</p>
                         <p class="mt-1 text-xs leading-tight tracking-wider text-gray-500 uppercase">Projects<br>Completed</p>
                     </div>
                     <div class="border-l border-[#2a2a2a] pl-8 md:pl-12">
@@ -184,11 +174,12 @@
                 <!-- Skill Tiles -->
                 <div class="grid max-w-sm grid-cols-2 gap-4 mx-auto mt-10 opacity-0 hero-tiles lg:mx-0">
                     <!-- Blue tile: Full Stack -->
+                    <a href="#skills">
                     <div class="p-5 text-left transition-colors bg-blue-500 rounded-2xl hover:bg-blue-600">
                         <svg class="mb-4 text-white w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
                         </svg>
-                        <p class="text-xs font-bold leading-relaxed tracking-wide text-white uppercase">React, Next.js,<br>Python, Node.js</p>
+                        <p class="text-xs font-bold leading-relaxed tracking-wide text-white uppercase">Gemini API, LLMs, Claude Code</p>
                         <div class="flex justify-end mt-4">
                             <div class="bg-white/20 rounded-lg p-1.5">
                                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -197,7 +188,9 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                     <!-- Dark tile: Cloud/DevSecOps -->
+                    <a href="#skills">
                     <div class="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 text-left hover:bg-[#222] transition-colors">
                         <svg class="mb-4 text-white w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                             <rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>
@@ -211,17 +204,18 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ─── About Me ─── -->
-    <section id="about-me" class="px-6 md:px-8 pt-20 pb-16 border-t border-[#1e1e1e] scroll-mt-20">
-        <h2 style="font-family: 'CustomCursive'" class="text-4xl font-bold text-center text-white md:text-6xl">Who I am</h2>
-        <h3 style="font-family: 'CustomCursive'" class="mt-2 text-lg italic text-center text-gray-500 md:text-2xl">Excellence and Investment in others</h3>
+    <section id="about-me" class="pt-20 pb-16 border-t border-[#1e1e1e] scroll-mt-20">
+        <h2 class="px-6 text-4xl font-black text-center text-white uppercase md:text-6xl">Who I am</h2>
+        <h3 class="px-6 mt-2 text-lg font-semibold text-center text-gray-500 md:text-2xl">Excellence and Investment in others</h3>
 
-        <div class="grid max-w-6xl grid-cols-1 gap-8 mx-auto mt-10 xl:grid-cols-2">
+        <div class="grid grid-cols-1 gap-8 px-6 mx-auto mt-10 max-w-7xl xl:grid-cols-2 md:px-8">
             <div class="flex items-center justify-center">
                 <ImageCarousel images={carouselImages1} alt="Jeffrey Vandever photos" />
             </div>
@@ -262,13 +256,13 @@
 
     <!-- ─── Experience ─── -->
     <section id="experience" class="relative px-6 md:px-8 pt-20 pb-20 border-t border-[#1e1e1e] scroll-mt-20">
-        <h2 style="font-family: 'CustomCursive'" class="text-4xl font-semibold text-center text-white md:text-6xl experience-title">Experience</h2>
+        <h2 class="text-4xl font-black text-center text-white uppercase md:text-6xl experience-title">Experience</h2>
         <ul class="grid max-w-6xl grid-cols-1 gap-5 mx-auto mt-10 xl:grid-cols-2">
             {#if experience.length === 0}
             <li class="text-center text-gray-500">No experience listed yet.</li>
             {/if}
             {#each experience as job}
-            <li class="experience-card">
+            <li class="flex flex-col experience-card">
                 <ExperienceCard {job} onClick={openExperienceModal} />
             </li>
             {/each}
@@ -280,13 +274,13 @@
 
     <!-- ─── Projects ─── -->
     <section id="projects" class="relative px-6 pb-20 md:px-8 pt-20 border-t border-[#1e1e1e] scroll-mt-20">
-        <h2 style="font-family: 'CustomCursive'" class="text-4xl font-semibold text-center text-white md:text-6xl projects-title">Projects</h2>
+        <h2 class="text-4xl font-black text-center text-white uppercase md:text-6xl projects-title">Projects</h2>
         <ul class="grid grid-cols-1 gap-5 mx-auto mt-10 xl:grid-cols-3 max-w-7xl">
             {#if projects.length === 0}
             <li class="text-center text-gray-500">No projects listed yet.</li>
             {/if}
             {#each projects as project}
-            <li class="project-card">
+            <li class="flex flex-col project-card">
                 <ProjectCard {project} onClick={openProjectModal} />
             </li>
             {/each}
@@ -298,7 +292,7 @@
 
     <!-- ─── Education ─── -->
     <section id="education" class="relative px-6 py-20 md:px-8 border-t border-[#1e1e1e] scroll-mt-20">
-        <h2 style="font-family: 'CustomCursive'" class="text-4xl font-semibold text-center text-white md:text-6xl">Education</h2>
+        <h2 class="text-4xl font-black text-center text-white uppercase md:text-6xl">Education</h2>
         <div class="max-w-3xl mx-auto mt-12 space-y-6">
             {#each education as edu}
                 <div class="p-8 rounded-xl bg-[#1a1a1a]" style="border: 1px solid #2a2a2a; border-left: 4px solid #3b82f6;">
@@ -331,7 +325,7 @@
 
     <!-- ─── Contact ─── -->
     <section id="contact" class="relative px-6 py-20 md:px-8 border-t border-[#1e1e1e] scroll-mt-20">
-        <h2 style="font-family: 'CustomCursive'" class="text-4xl font-semibold text-center text-white md:text-6xl">Contact Me</h2>
+        <h2 class="text-4xl font-black text-center text-white uppercase md:text-6xl">Contact Me</h2>
         <div class="max-w-2xl mx-auto mt-12">
             <form method="POST" action="https://formspree.io/f/xqakqokj" class="p-8 space-y-6 border border-[#2a2a2a] rounded-xl bg-[#1a1a1a]">
                 <input type="hidden" name="_subject" value="Contact request from portfolio website" />

@@ -48,7 +48,7 @@
 
 <div class="py-12 overflow-hidden max-w-[150rem] mx-auto">
     <div class="flex items-center justify-center gap-4 mb-8">
-        <h3 style="font-family: 'CustomCursive'" class="text-center text-4xl font-semibold text-white">Technical Skills</h3>
+        <h3 class="text-center text-4xl font-black uppercase text-white">Technical Skills</h3>
     </div>
     <div class="relative">
         <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#111111] to-transparent z-10 pointer-events-none"></div>
