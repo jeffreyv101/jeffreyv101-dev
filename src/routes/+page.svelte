@@ -158,16 +158,16 @@
                 <!-- Stats -->
                 <div class="flex justify-center gap-0 mt-10 opacity-0 hero-stats lg:justify-start">
                     <div class="pr-8 md:pr-12">
-                        <p class="text-4xl font-black text-white md:text-5xl">+3</p>
+                        <p class="text-4xl font-black text-white md:text-5xl">3+</p>
                         <p class="mt-1 text-xs leading-tight tracking-wider text-gray-500 uppercase">Years of<br>Experience</p>
                     </div>
                     <div class="border-l border-[#2a2a2a] pl-8 pr-8 md:pl-12 md:pr-12">
-                        <p class="text-4xl font-black text-white md:text-5xl">+12</p>
+                        <p class="text-4xl font-black text-white md:text-5xl">12+</p>
                         <p class="mt-1 text-xs leading-tight tracking-wider text-gray-500 uppercase">Projects<br>Completed</p>
                     </div>
                     <div class="border-l border-[#2a2a2a] pl-8 md:pl-12">
-                        <p class="text-4xl font-black text-white md:text-5xl">+2</p>
-                        <p class="mt-1 text-xs leading-tight tracking-wider text-gray-500 uppercase">Internships<br>Completed</p>
+                        <p class="text-4xl font-black text-white md:text-5xl">100%</p>
+                        <p class="mt-1 text-xs leading-tight tracking-wider text-gray-500 uppercase">Cloud & DevOps<br>Focused</p>
                     </div>
                 </div>
 
