@@ -8,10 +8,8 @@ import twr360 from '$lib/assets/experience/twr360.png'
 import twr360Demo from '$lib/assets/projects/demos/twr360-chatbot.png'
 
 import mergedDemo from '$lib/assets/projects/demos/merged.png'
-import fpmWebsite from '$lib/assets/projects/demos/fpm-website.png'
+import familyBank from '$lib/assets/projects/demos/family-bank.png'
 import weatherApp from '$lib/assets/projects/demos/weather-app.png'
-
-import missionizeLogo from '$lib/assets/projects/missionize-logo.png'
 
 // Project List
 const projects = [
@@ -30,9 +28,43 @@ const projects = [
         ],
         "context": "As part of CSCN 408, a mini-capstone course, our team was tasked with developing a large-scale application to solve a problem of our choice. We chose to develop a social media platform for developers to share their projects and connect with other developers.",
         "description": [
-            "Merged is a social media platform for developers to share their projects and connect with other developers. The platform allows users to create profiles, post updates about their projects, and follow/connect with other developers. The platform also features a tinder-like swipe interface to connect with other developers based on shared interests and project types. This emphasizes collaboration and networking within the developer community, fostering connections based on shared passions and project synergies."
+            "Merged has two parts: Repo Reels, a Intagram-reels like feed showcasing interesting open-source projects, and Merged, a Tinder-like swipe interface which allows developers to connect with other developers based on shared interests and project preferences. This platform aims to foster collaboration and networking within the developer community."
         ],
         "link": "https://github.com/jeffreyv101/Merged"
+    },
+    {
+        "title": "Script Workflow Execution Environment",
+        "image": pyinaboxLogo,
+        "demo-image": pythonRunner,
+        "company": "CloudFit Software",
+        "location": "Lynchburg, VA",
+        "date": "August 2025 - May 2026",
+        "highlights": [
+            "Workflow Engine Extension",
+            "Multi-Language Script Support",
+            "Sandboxed Execution Environment"
+        ],
+        "skills": ["C#", "K8s Jobs", "Python", "PowerShell", "Docker"],
+        "description": [
+            "As part of a capstone project with CloudFit Software, extended the organization's workflow engine to execute Python and PowerShell scripts within a sandboxed environment using Docker containers orchestrated by Kubernetes. Developed a user-friendly interface for script submission and result retrieval, enhancing the platform's versatility and user experience."
+        ],
+        "link": "NA"
+    },
+    {
+        "title": "Family Financial Literacy Application",
+        "skills": ["Next.js", "Supabase", "Tailwind CSS", "TypeScript"],
+        "image": "",
+        "demo-image": familyBank,
+        "highlights": [
+            "Comprehensive Financial Education Platform",
+            "Virtual Banking System for Kids",
+            "Parental Controls and Monitoring"
+        ],
+        "context": "For this project, I tasked myself with developing a family financial education platform to help parents teach their children about money management as I felt that there never was a good dedicated platform for this purpose.",
+        "description": [
+            "For this project, I developed a comprehensive family financial education platform that allows parents to teach their children about money management through a virtual banking system. The platform includes features such as virtual bank accounts, transactions, savings goals, and educational resources to help families learn about personal finance together."
+        ],
+        "link": "https://familyfinlit.org"
     },
     {
         "title": "TWR360 Generative AI Chatbot",
@@ -44,70 +76,13 @@ const projects = [
         "date": "May 2024 - Aug 2024",
         "highlights": [
             "Generative AI Chatbot Integration",
-            "Content Discovery Enhancement",
-            "User Engagement Improvement"
+            "Content Discovery Enhancement"
         ],
         "context": "",
         "description": [
             "Built a generative AI chatbot for the TWR360 platform to help users find relevant content. Click the link below to go to the TWR360 homepage where the chatbot widget will be located on the lower right corner:"
         ],
         "link": "https://twr360.org"
-    },
-    {
-        "title": "Python Script Workflow Execution Environment",
-        "image": pyinaboxLogo,
-        "demo-image": pythonRunner,
-        "company": "CloudFit Software",
-        "location": "Lynchburg, VA",
-        "date": "August 2025 - May 2026",
-        "highlights": [
-            "Workflow Engine Extension",
-            "Multi-Language Script Support",
-            "Sandboxed Execution Environment"
-        ],
-        "skills": ["C#", "Kubernetes", "Python", "PowerShell", "Docker"],
-        "description": [
-            "As part of a capstone project with CloudFit Software, extended the organization's workflow engine to execute Python and PowerShell scripts within a sandboxed environment using Docker containers orchestrated by Kubernetes. Developed a user-friendly interface for script submission and result retrieval, enhancing the platform's versatility and user experience."
-        ],
-        "link": "NA"
-    },
-    {
-        "title": "Software Development Club Website",
-        "image": sdcLogo,
-        "demo-image": sdcDemo,
-        "company": "Liberty University",
-        "location": "Lynchburg, VA",
-        "date": "July 2025 - September 2025",
-        "skills": ["React.js", "React Router", "Vite.js", "Tailwind CSS"],
-        "highlights": [
-            "Club Information Hub",
-            "Event Announcements",
-            "Resource Repository"
-        ],
-        "context": "",
-        "description": [
-            "Developed a website for the Liberty University Software Development Club to help students find resources and information about the club. The website includes information about upcoming events, club resources, and projects."
-        ],
-        "link": "https://lusdc.org"
-    },
-    {
-        "title": "Liberty University Facilities Planning & Management Website",
-        "image": "",
-        "demo-image": fpmWebsite,
-        "company": "Liberty University",
-        "location": "Lynchburg, VA",
-        "date": "April 2025 - May 2025 & September 2025 - May 2026",
-        "skills": ["WordPress", "HTML", "CSS"],
-        "highlights": [
-            "Facilities Information Hub",
-            "Planning & Management Tools",
-            "Resource Repository"
-        ],
-        "context": "",
-        "description": [
-            "Redesigned and launched a unified departmental site for 5+ formerly separate departments, boosting page views by 30% and engagement by 25% while ensuring brand consistency and improving navigation across the Liberty.edu domain. Architected an enterprise marketplace for facilities asset surplus for the university community and the public."
-        ],
-        "link": "https://www.liberty.edu/facilities-management/"
     },
     {
         "title": "Weather Dashboard Application",
@@ -129,6 +104,44 @@ const projects = [
         "link": "https://github.com/jeffreyv101/weather-app"
     },
     {
+        "title": "Software Development Club Website",
+        "image": sdcLogo,
+        "demo-image": sdcDemo,
+        "company": "Liberty University",
+        "location": "Lynchburg, VA",
+        "date": "July 2025 - September 2025",
+        "skills": ["React", "React Router", "Vite.js", "Tailwind CSS"],
+        "highlights": [
+            "Club Information Hub",
+            "Event Announcements",
+            "Resource Repository"
+        ],
+        "context": "",
+        "description": [
+            "Developed a website for the Liberty University Software Development Club to help students find resources and information about the club. The website includes information about upcoming events, club resources, and projects."
+        ],
+        "link": "https://lusdc.org"
+    },
+    {
+        "title": "Liberty University Facilities Planning & Management Website",
+        "image": "",
+        "demo-image": "",
+        "company": "Liberty University",
+        "location": "Lynchburg, VA",
+        "date": "April 2025 - May 2025 & September 2025 - May 2026",
+        "skills": ["WordPress", "HTML", "CSS"],
+        "highlights": [
+            "Facilities Information Hub",
+            "Planning & Management Tools",
+            "Resource Repository"
+        ],
+        "context": "",
+        "description": [
+            "Redesigned and launched a unified departmental site for 5+ formerly separate departments, boosting page views by 30% and engagement by 25% while ensuring brand consistency and improving navigation across the Liberty.edu domain. Architected an enterprise marketplace for facilities asset surplus for the university community and the public."
+        ],
+        "link": "https://www.liberty.edu/facilities-management/"
+    },
+    {
         "title": "TWR360 RSS.com Podcast Delivery System",
         "skills": ["AWS EC2", "Python"],
         "image": twr360,
@@ -146,22 +159,6 @@ const projects = [
             "Led the development of a JSON feed to XML feed converter to develop a robust podcast delivery system for internal use for the TWR360 platform in a club team of 10 members using V-shaped methodology."
         ],
         "link": "NA"
-    },
-    {
-        "title": "Family Financial Literacy Application",
-        "skills": ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Prisma"],
-        "image": "",
-        "demo-image": "",
-        "highlights": [
-            "Comprehensive Financial Education Platform",
-            "Virtual Banking System for Kids",
-            "Parental Controls and Monitoring"
-        ],
-        "context": "",
-        "description": [
-            "Developed a comprehensive family financial education platform that allows parents to teach their children about money management through a virtual banking system."
-        ],
-        "link": "https://familyfinlit.org"
     },
     {
         "title": "JPMorgan Software Engineering Virtual Experience",
