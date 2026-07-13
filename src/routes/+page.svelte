@@ -113,14 +113,14 @@
                             <img
                                 src={profilePic}
                                 alt="Jeffrey Vandever"
-                                class="object-cover object-top w-full h-auto"
+                                class="object-cover object-top w-full h-full"
                             />
                         </div>
                         <!-- Name -->
                         <h1 class="mt-5 text-3xl font-bold text-gray-900">Jeffrey Vandever</h1>
                         <!-- Tagline -->
                         <p class="px-4 mt-2 text-sm leading-relaxed text-gray-500">
-                            A Software Engineer building full-stack applications and DevSecOps solutions.
+                            A Full-Stack Software Engineer building cloud-native applications and scalable backend systems.
                         </p>
                         <!-- Social Icons -->
                         <div class="flex justify-center pb-1 mt-5 gap-7">
@@ -167,19 +167,19 @@
                     </div>
                     <div class="border-l border-[#2a2a2a] pl-8 md:pl-12">
                         <p class="text-4xl font-black text-white md:text-5xl">100%</p>
-                        <p class="mt-1 text-xs leading-tight tracking-wider text-gray-500 uppercase">Cloud & DevOps<br>Focused</p>
+                        <p class="mt-1 text-xs leading-tight tracking-wider text-gray-500 uppercase">Full-Stack &<br>Cloud Native</p>
                     </div>
                 </div>
 
                 <!-- Skill Tiles -->
                 <div class="grid max-w-sm grid-cols-2 gap-4 mx-auto mt-10 opacity-0 hero-tiles lg:mx-0">
-                    <!-- Blue tile: Full Stack -->
+                    <!-- Blue tile: Full-Stack Development -->
                     <a href="#skills">
                     <div class="p-5 text-left transition-colors bg-blue-500 rounded-2xl hover:bg-blue-600">
                         <svg class="mb-4 text-white w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
                         </svg>
-                        <p class="text-xs font-bold leading-relaxed tracking-wide text-white uppercase">Gemini API, LLMs,<br>AI Agents</p>
+                        <p class="text-xs font-bold leading-relaxed tracking-wide text-white uppercase">Next.js, Python,<br>React Native, TypeScript</p>
                         <div class="flex justify-end mt-4">
                             <div class="bg-white/20 rounded-lg p-1.5">
                                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -189,13 +189,13 @@
                         </div>
                     </div>
                     </a>
-                    <!-- Dark tile: Cloud/DevSecOps -->
+                    <!-- Dark tile: Cloud & Automation -->
                     <a href="#skills">
                     <div class="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-5 text-left hover:bg-[#222] transition-colors">
                         <svg class="mb-4 text-white w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                             <rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>
                         </svg>
-                        <p class="text-xs font-bold leading-relaxed tracking-wide text-white uppercase">AWS, Docker,<br>Kubernetes, CI/CD</p>
+                        <p class="text-xs font-bold leading-relaxed tracking-wide text-white uppercase">Azure, AWS,<br>Docker, CI/CD</p>
                         <div class="flex justify-end mt-4">
                             <div class="bg-white/10 rounded-lg p-1.5">
                                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -225,7 +225,7 @@
                         I'm someone who believes that excellence isn't about perfection — it's about <span class="font-bold text-blue-400">consistency, curiosity, and care for others.</span>
                     </p>
                     <p class="text-base leading-relaxed text-gray-300">
-                        My drive as a developer and service engineer comes from a desire to build solutions that make people's work, learning, and communication easier and more meaningful. Whether I'm developing software, leading a team, or mentoring peers, I aim to set a high standard not only in the quality of my work but in how I treat the people I work with.
+                        My drive as a software engineer comes from a desire to build solutions that make people's work, learning, and communication easier and more meaningful. Whether I'm developing software, leading a team, or mentoring peers, I aim to set a high standard not only in the quality of my work but in how I treat the people I work with.
                     </p>
                 </div>
             </div>

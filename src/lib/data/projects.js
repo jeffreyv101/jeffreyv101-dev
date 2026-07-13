@@ -44,7 +44,7 @@ const projects = [
             "Multi-Language Script Support",
             "Sandboxed Execution Environment"
         ],
-        "skills": ["C#", "K8s Jobs", "Python", "PowerShell", "Docker"],
+        "skills": ["C#", "Python", "PowerShell", "Docker", "Kubernetes"],
         "description": [
             "As part of a capstone project with CloudFit Software, extended the organization's workflow engine to execute Python and PowerShell scripts within a sandboxed environment using Docker containers orchestrated by Kubernetes. Developed a user-friendly interface for script submission and result retrieval, enhancing the platform's versatility and user experience."
         ],
@@ -68,7 +68,7 @@ const projects = [
     },
     {
         "title": "TWR360 Generative AI Chatbot",
-        "skills": ["Google Gemini", "Google Cloud Platform", "Node.js", "AWS EC2", "S3"],
+        "skills": ["Node.js", "Google Gemini", "Google Cloud Platform", "AWS EC2", "S3"],
         "image": twr360,
         "demo-image": twr360Demo,
         "company": "Trans World Radio",
@@ -143,7 +143,7 @@ const projects = [
     },
     {
         "title": "TWR360 RSS.com Podcast Delivery System",
-        "skills": ["AWS EC2", "Python"],
+        "skills": ["Python", "AWS EC2"],
         "image": twr360,
         "demo-image": "",
         "company": "Liberty University Software Development Club",

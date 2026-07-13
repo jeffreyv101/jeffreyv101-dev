@@ -5,17 +5,20 @@ import cloudfit from '$lib/assets/experience/cloudfit.jpeg'
 
 let experience = [
     {
-        "title": "DevSecOps Service Engineer",
+        "title": "DevSecOps Engineer",
         "image": cloudfit,
         "company": "CloudFit Software",
         "location": "Lynchburg, VA",
-        "date": "June 2026",
-        "skills": ["DevSecOps", "Docker", "Kubernetes", "CI/CD"],
+        "date": "June 2026 - Present",
+        "skills": ["Azure Bicep", "C#", "Python", "Docker"],
         "highlights": [
-            "DevSecOps Service Management"
+            "IaC Solution Architecture",
+            "Backend Automation"
         ],
         "description": [
-            "Upcoming role starting in June 2026. Will be responsible for managing and optimizing DevSecOps services for clients.",
+            "Architecting and developing modular Infrastructure-as-Code (IaC) solutions using Azure Bicep.",
+            "Applying core software engineering practices—including strict Git version control, modular code architecture, and automated validation linting—to secure and streamline cloud infrastructure deployments.",
+            "Designing and automating backend utilities to optimize internal deployment workflows."
         ]
     },
     {
